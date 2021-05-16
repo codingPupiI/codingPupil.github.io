@@ -20,16 +20,17 @@
     var CONFIG = {"hostname":"codingpupii.github.io","root":"/codingPupil.github.io/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="[TOC] 设计模式构建型模式工厂模式简单工厂模式举个例子，直接 new 对象的方式相当于当我们需要一个苹果时，我们需要知道苹果的构造方法，需要一个梨子时，需要知道梨子的构造方法。更好的实现方式是有一个水果工厂，我们告诉工厂需要什么种类的水果，水果工厂将我们需要的水果制造出来给我们就可以了。这样我们就无需知道苹果、梨子是怎么种出来的，只用和水果工厂打交道即可。 水果工厂： 123456789pub">
+  <meta name="description" content="设计模式构建型模式工厂模式简单工厂模式水果工厂： 123456789public class FruitFactory &amp;#123;    public Fruit create(String type)&amp;#123;        switch (type)&amp;#123;            case &quot;苹果&quot;: return new Apple();            c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="设计模式">
 <meta property="og:url" content="https://codingpupii.github.io/codingPupil.github.io/2021/05/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="[TOC] 设计模式构建型模式工厂模式简单工厂模式举个例子，直接 new 对象的方式相当于当我们需要一个苹果时，我们需要知道苹果的构造方法，需要一个梨子时，需要知道梨子的构造方法。更好的实现方式是有一个水果工厂，我们告诉工厂需要什么种类的水果，水果工厂将我们需要的水果制造出来给我们就可以了。这样我们就无需知道苹果、梨子是怎么种出来的，只用和水果工厂打交道即可。 水果工厂： 123456789pub">
+<meta property="og:description" content="设计模式构建型模式工厂模式简单工厂模式水果工厂： 123456789public class FruitFactory &amp;#123;    public Fruit create(String type)&amp;#123;        switch (type)&amp;#123;            case &quot;苹果&quot;: return new Apple();            c">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-07T12:02:24.171Z">
-<meta property="article:modified_time" content="2021-05-07T12:02:24.171Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:modified_time" content="2021-05-14T08:09:48.372Z">
+<meta property="article:author" content="pupil">
+<meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://codingpupii.github.io/codingPupil.github.io/2021/05/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
@@ -45,7 +46,7 @@
   };
 </script>
 
-  <title> | Hexo</title>
+  <title>设计模式 | Hexo</title>
   
 
 
@@ -153,8 +154,8 @@
     <link itemprop="mainEntityOfPage" href="https://codingpupii.github.io/codingPupil.github.io/2021/05/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/codingPupil.github.io/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="image" content="/codingPupil.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="pupil">
       <meta itemprop="description" content="">
     </span>
 
@@ -163,7 +164,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          设计模式
         </h1>
 
         <div class="post-meta">
@@ -175,6 +176,13 @@
 
               <time title="Created: 2021-05-07 20:02:24" itemprop="dateCreated datePublished" datetime="2021-05-07T20:02:24+08:00">2021-05-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-05-14 16:09:48" itemprop="dateModified" datetime="2021-05-14T16:09:48+08:00">2021-05-14</time>
+              </span>
 
           
 
@@ -187,9 +195,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>[TOC]</p>
-<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="构建型模式"><a href="#构建型模式" class="headerlink" title="构建型模式"></a>构建型模式</h2><h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><h4 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h4><p>举个例子，直接 new 对象的方式相当于当我们需要一个苹果时，我们需要知道苹果的构造方法，需要一个梨子时，需要知道梨子的构造方法。更好的实现方式是有一个水果工厂，我们告诉工厂需要什么种类的水果，水果工厂将我们需要的水果制造出来给我们就可以了。这样我们就无需知道苹果、梨子是怎么种出来的，只用和水果工厂打交道即可。</p>
-<p>水果工厂：</p>
+        <h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a><font color="darkblue">设计模式</font></h1><h2 id="构建型模式"><a href="#构建型模式" class="headerlink" title="构建型模式"></a><font color="blue">构建型模式</font></h2><h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a><font color="darkgreen">工厂模式</font></h3><h4 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a><font color="purple">简单工厂模式</font></h4><p>水果工厂：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitFactory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Fruit <span class="title">create</span><span class="params">(String type)</span></span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (type)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;苹果&quot;</span>: <span class="keyword">return</span> <span class="keyword">new</span> Apple();</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;梨子&quot;</span>: <span class="keyword">return</span> <span class="keyword">new</span> Pear();</span><br><span class="line">            <span class="keyword">default</span>: <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">&quot;暂时没有这种水果&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>调用者：</p>
@@ -203,6 +209,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/codingPupil.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"># 设计模式</a>
+          </div>
 
         
 
@@ -210,10 +219,13 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/codingPupil.github.io/2021/05/07/test/" rel="prev" title="test">
-      <i class="fa fa-chevron-left"></i> test
+    <a href="/codingPupil.github.io/2021/05/07/Spring/" rel="prev" title="Spring学习">
+      <i class="fa fa-chevron-left"></i> Spring学习
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/codingPupil.github.io/2021/05/12/MySql%E9%9D%A2%E7%BB%8F/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -278,9 +290,9 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="John Doe"
-      src="/codingPupil.github.io/images/avatar.gif">
-  <p class="site-author-name" itemprop="name">John Doe</p>
+    <img class="site-author-image" itemprop="image" alt="pupil"
+      src="/codingPupil.github.io/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">pupil</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -288,13 +300,13 @@
       <div class="site-state-item site-state-posts">
           <a href="/codingPupil.github.io/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/codingPupil.github.io/tags/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -325,7 +337,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">pupil</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>

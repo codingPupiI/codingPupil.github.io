@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/codingPupil.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/codingPupil.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/codingPupil.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/codingPupil.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/codingPupil.github.io/css/main.css">
+
+
+<link rel="stylesheet" href="/codingPupil.github.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"codingpupii.github.io","root":"/codingPupil.github.io/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1.HelloWorld实现步骤： 新建web maven工程 加入依赖spring-webmvc依赖，间接把spring的依赖都加入到项目jsp，servlet依赖  3.重点： 在web.xml中注册springmvc框架的核心对象DispatcherServlet   1)DispatcherServlet叫做中央调度器， 是一个servlet， 它的父类是继承HttpServlet   2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringMVC">
+<meta property="og:url" content="https://codingpupii.github.io/codingPupil.github.io/2021/05/14/SpringMVC/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.HelloWorld实现步骤： 新建web maven工程 加入依赖spring-webmvc依赖，间接把spring的依赖都加入到项目jsp，servlet依赖  3.重点： 在web.xml中注册springmvc框架的核心对象DispatcherServlet   1)DispatcherServlet叫做中央调度器， 是一个servlet， 它的父类是继承HttpServlet   2">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://codingpupii.github.io/codingPupil.github.io/codingPupil.github.io/2021/05/14/SpringMVC/BaiduNetdiskDownload/SpringMVC/springmvc.png">
+<meta property="article:published_time" content="2021-05-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-05-16T08:54:06.871Z">
+<meta property="article:author" content="pupil">
+<meta property="article:tag" content="SpringMVC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://codingpupii.github.io/codingPupil.github.io/codingPupil.github.io/2021/05/14/SpringMVC/BaiduNetdiskDownload/SpringMVC/springmvc.png">
+
+<link rel="canonical" href="https://codingpupii.github.io/codingPupil.github.io/2021/05/14/SpringMVC/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>SpringMVC | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/codingPupil.github.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/codingPupil.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/codingPupil.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://codingpupii.github.io/codingPupil.github.io/2021/05/14/SpringMVC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/codingPupil.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="pupil">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SpringMVC
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-05-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-05-14T00:00:00+08:00">2021-05-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-05-16 16:54:06" itemprop="dateModified" datetime="2021-05-16T16:54:06+08:00">2021-05-16</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-HelloWorld"><a href="#1-HelloWorld" class="headerlink" title="1.HelloWorld"></a>1.HelloWorld</h1><h2 id="实现步骤："><a href="#实现步骤：" class="headerlink" title="实现步骤："></a>实现步骤：</h2><ol>
+<li>新建web maven工程</li>
+<li>加入依赖<br>spring-webmvc依赖，间接把spring的依赖都加入到项目<br>jsp，servlet依赖</li>
+</ol>
+<p>3.重点： 在web.xml中注册springmvc框架的核心对象DispatcherServlet<br>   1)DispatcherServlet叫做中央调度器， 是一个servlet， 它的父类是继承HttpServlet<br>   2)DispatcherServlet页叫做前端控制器（front controller）<br>   3)DispatcherServlet负责接收用户提交的请求， 调用其它的控制器对象，<br>                      并把请求的处理结果显示给用户</p>
+<p>4.创建一个发起请求的页面 index.jsp</p>
+<p>5.创建控制器(处理器)类<br>  1）在类的上面加入@Controller注解，创建对象，并放入到springmvc容器中<br>  2）在类中的方法上面加入@RequestMapping注解。</p>
+<p>6.创建一个作为结果的jsp，显示请求的处理结果。</p>
+<p>7.创建springmvc的配置文件（spring的配置文件一样）<br>  1）声明组件扫描器， 指定@Contorller注解所在的包名<br>  2）声明视图解析器。帮助处理视图的。</p>
+<p>pom.xml 配置文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.bjpowernode<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>ch01-hello-springmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--servlet依赖--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--springmvc依赖--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 编码和编译和JDK版本 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    注册springmvc的核心对象DispatcherServlet</p>
+<p>​    需要在tomcat服务器启动后，创建DispatcherServlet对象的实例。</p>
+<p>​    为什么要创建DispatcherServlet对象的实例呢？</p>
+<p>​    因为DispatcherServlet在他的创建过程中， 会同时创建springmvc容器对象，读取springmvc的配置文件，把这个配置文件中的对象都创建好， 当用户发起请求时就可以直接使用对象了。</p>
+<p>​    servlet的初始化会执行init（）方法。 DispatcherServlet在init（）中{</p>
+<p>​      //创建容器，读取配置文件</p>
+<p>​      WebApplicationContext ctx = new ClassPathXmlApplicationContext(“springmvc.xml”);</p>
+<p>​      //把容器对象放入到ServletContext中</p>
+<p>​      getServletContext().setAttribute(key, ctx);</p>
+<p>​    }**</p>
+<p><strong>读取配置文件</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springmvc<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">&lt;!--自定义springmvc读取的配置文件的位置--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">           <span class="comment">&lt;!--springmvc的配置文件的位置的属性--&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">           <span class="comment">&lt;!--指定自定义文件的位置--&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:Springmvc.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">&lt;!--在tomcat启动后，创建Servlet对象</span></span><br><span class="line"><span class="comment">           load-on-startup:表示tomcat启动后创建对象的顺序。它的值是整数，数值越小，</span></span><br><span class="line"><span class="comment">                           tomcat创建对象的时间越早。 大于等于0的整数。</span></span><br><span class="line"><span class="comment">       --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springmvc<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">           使用框架的时候， url-pattern可以使用两种值</span></span><br><span class="line"><span class="comment">           1. 使用扩展名方式， 语法 *.xxxx , xxxx是自定义的扩展名。 常用的方式 *.do, *.action, *.mvc等等</span></span><br><span class="line"><span class="comment">              不能使用 *.jsp</span></span><br><span class="line"><span class="comment">              http://localhost:8080/myweb/some.do</span></span><br><span class="line"><span class="comment">              http://localhost:8080/myweb/other.do</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">           2.使用斜杠 &quot;/&quot;</span></span><br><span class="line"><span class="comment">       --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>*.do<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  <span class="doctag">@Controller</span>:创建处理器对象，对象放在springmvc容器中。</span></span><br><span class="line"><span class="comment"> *  位置：在类的上面</span></span><br><span class="line"><span class="comment"> *  和Spring中讲的<span class="doctag">@Service</span> ,<span class="doctag">@Component</span></span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  能处理请求的都是控制器（处理器）： MyController能处理请求，</span></span><br><span class="line"><span class="comment"> *                         叫做后端控制器（back controller）</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  没有注解之前，需要实现各种不同的接口才能做控制器使用</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyController</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 处理用户提交的请求，springmvc是使用方法来处理的</span></span><br><span class="line"><span class="comment">     * 方法是自定义的， 可以有多种返回值， 多种参数，方法名称自定义</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 准备使用doSome方法处理some.do请求。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@RequestMapping</span>: 请求映射，作用是把一个请求地址和一个方法绑定在一起。</span></span><br><span class="line"><span class="comment">     *                  一个请求指定一个方法处理。</span></span><br><span class="line"><span class="comment">     *       属性： 1. value 是一个String，表示请求的uri地址的（some.do）。</span></span><br><span class="line"><span class="comment">     *                value的值必须是唯一的， 不能重复。 在使用时，推荐地址以“/”开头</span></span><br><span class="line"><span class="comment">     *       位置：1.在方法的上面，常用的。</span></span><br><span class="line"><span class="comment">     *            2.在类的上面</span></span><br><span class="line"><span class="comment">     *  说明： 使用RequestMapping修饰的方法叫做处理器方法或者控制器方法。</span></span><br><span class="line"><span class="comment">     *  使用<span class="doctag">@RequestMapping</span>修饰的方法可以处理请求的，类似Servlet中的doGet, doPost</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *  返回值：ModelAndView 表示本次请求的处理结果</span></span><br><span class="line"><span class="comment">     *   Model: 数据，请求处理完成后，要显示给用户的数据</span></span><br><span class="line"><span class="comment">     *   View: 视图， 比如jsp等等。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/some.do&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doSome</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ModelAndView modelAndView = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        modelAndView.addObject(<span class="string">&quot;msg&quot;</span>, <span class="string">&quot;欢迎&quot;</span>);</span><br><span class="line">        modelAndView.addObject(<span class="string">&quot;fun&quot;</span>, <span class="string">&quot;执行dosome&quot;</span>);</span><br><span class="line">        <span class="comment">//指定视图, 指定视图的完整路径</span></span><br><span class="line">        <span class="comment">//框架对视图执行的forward操作， request.getRequestDispather(&quot;/show.jsp).forward(...)</span></span><br><span class="line">        modelAndView.setViewName(<span class="string">&quot;/show.jsp&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> modelAndView;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Springmvc.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--声明组件扫描器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;controller&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>SpringMVC：是基于spring的一个框架， 实际上就是spring的一个模块， 专门是做web开发的。理解是servlet的一个升级</p>
+<p>web开发底层是servlet ， 框架是在servlet基础上面加入一些功能，让你做web开发方便。</p>
+<p>SpringMVC就是一个Spring。 Spring是容器，ioc能够管理对象，使用&lt;bean&gt;, @Component, @Repository, @Service, @Controller<br>SpringMVC能够创建对象， 放入到容器中（SpringMVC容器）， springmvc容器中放的是控制器对象，</p>
+<p>我们要做的是 使用@Contorller创建控制器对象， 把对象放入到springmvc容器中， 把创建的对象作为控制器使用这个控制器对象能接收用户的请求， 显示处理结果，就当做是一个servlet使用。</p>
+<p>使用@Controller注解创建的是一个普通类的对象， 不是Servlet。 springmvc赋予了控制器对象一些额外的功能。</p>
+<p>web开发底层是servlet， springmvc中有一个对象是Servlet ： DispatherServlet(中央调度器)<br>DispatherServlet: 负责接收用户的所有请求， 用户把请求给了DispatherServlet， 之后DispatherServlet把请求转发给<br>                                我们的Controller对象， 最后是Controller对象处理请求。</p>
+<h2 id="springmvc请求的处理流程"><a href="#springmvc请求的处理流程" class="headerlink" title="springmvc请求的处理流程"></a>springmvc请求的处理流程</h2><p> 1）发起some.do<br> 2）tomcat(web.xml–url-pattern知道 *.do的请求给DispatcherServlet)<br> 3）DispatcherServlet（根据springmvc.xml配置知道 some.do—doSome()）<br> 4）DispatcherServlet把some.do转发个MyController.doSome()方法<br> 5）框架执行doSome（）把得到ModelAndView进行处理， 转发到show.jsp</p>
+<p>上面的过程简化的方式<br>  some.do—DispatcherServlet—MyController</p>
+<p><img src="/codingPupil.github.io/codingPupil.github.io/2021/05/14/SpringMVC/BaiduNetdiskDownload\SpringMVC\springmvc.png" alt="springmvc"></p>
+<h2 id="springmvc执行过程源代码分析"><a href="#springmvc执行过程源代码分析" class="headerlink" title="springmvc执行过程源代码分析"></a>springmvc执行过程源代码分析</h2><ol>
+<li>tomcat启动，创建容器的过程<br>通过load-on-start标签指定的1，创建DisaptcherServlet对象，<br>DisaptcherServlet它的父类是继承HttpServlet的， 它是一个serlvet， 在被创建时，会执行init（）方法。<br>在init（）方法中<br>//创建容器，读取配置文件<br> WebApplicationContext ctx = new ClassPathXmlApplicationContext(“springmvc.xml”);<br> //把容器对象放入到ServletContext中<br> getServletContext().setAttribute(key, ctx);</li>
+</ol>
+<p>  上面创建容器作用： 创建@controller注解所在的类的对象， 创建MyController对象，<br>   这个对象放入到 springmvc的容器中， 容器是map ， 类似 map.put(“myController”,MyController对象)</p>
+<p>2.请求的处理过程<br>  1）执行servlet的service()<br>       protected void service(HttpServletRequest request, HttpServletResponse response)</p>
+<p>   protected void doService(HttpServletRequest request, HttpServletResponse response)</p>
+<p>  DispatcherServlet.doDispatch(request, response){</p>
+<p>​      调用MyController的.doSome()方法<br>  }</p>
+<p>   doDispatch：springmvc中DispatcherServlet的核心方法， 所有的请求都在这个方法中完成的。</p>
+<p>没有加入注解驱动标签时的状态<br>org.springframework.http.converter.ByteArrayHttpMessageConverter<br>org.springframework.http.converter.StringHttpMessageConverter<br>org.springframework.http.converter.xml.SourceHttpMessageConverter<br>org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter</p>
+<p>加入注解驱动标签时的状态<br>org.springframework.http.converter.ByteArrayHttpMessageConverter<br>org.springframework.http.converter.StringHttpMessageConverter<br>org.springframework.http.converter.ResourceHttpMessageConverter<br>org.springframework.http.converter.ResourceRegionHttpMessageConverter<br>org.springframework.http.converter.xml.SourceHttpMessageConverter<br>org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter<br>org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter<br>org.springframework.http.converter.json.MappingJackson2HttpMessageConverter</p>
+<h2 id="视图解析器"><a href="#视图解析器" class="headerlink" title="视图解析器"></a>视图解析器</h2><p>Springmvc.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--声明springmvc框架中的视图解析器--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;prefix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;/WEB-INF/view/&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;suffix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;.jsp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//当配置了视图解析器后，可以使用逻辑名称（文件名），指定视图</span></span><br><span class="line">      <span class="comment">//框架会使用视图解析器的前缀 + 逻辑名称 + 后缀 组成完成路径， 这里就是字符连接操作</span></span><br><span class="line">      <span class="comment">///WEB-INF/view/ + show + .jsp</span></span><br><span class="line">      mv.setViewName(<span class="string">&quot;show&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="RequestMapping"></a>RequestMapping</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 	  <span class="doctag">@RequestMapping</span>:</span></span><br><span class="line"><span class="comment"> *    value ： 所有请求地址的公共部分，叫做模块名称</span></span><br><span class="line"><span class="comment"> *    位置： 放在类的上面</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/user&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@RequestMapping</span> : 请求映射</span></span><br><span class="line"><span class="comment">     *             属性： method， 表示请求的方式。 它的值RequestMethod类枚举值。</span></span><br><span class="line"><span class="comment">     *                    例如表示get请求方式， RequestMethod.GET</span></span><br><span class="line"><span class="comment">     *                    post方式， RequestMethod.POST</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *  你不用get方式，错误是：</span></span><br><span class="line"><span class="comment">     *  HTTP Status 405 - Request method &#x27;GET&#x27; not supported</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">//指定some.do使用get请求方式</span></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/some.do&quot;,method = RequestMethod.GET)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doSome</span><span class="params">()</span></span>&#123;  <span class="comment">// doGet()--service请求处理</span></span><br><span class="line">        <span class="comment">//处理some.do请求了。 相当于service调用处理完成了。</span></span><br><span class="line">        ModelAndView mv  = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        mv.addObject(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;欢迎使用springmvc做web开发&quot;</span>);</span><br><span class="line">        mv.addObject(<span class="string">&quot;fun&quot;</span>,<span class="string">&quot;执行的是doSome方法&quot;</span>);</span><br><span class="line">        mv.setViewName(<span class="string">&quot;show&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> mv;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//指定other.do是post请求方式</span></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/other.do&quot;,method = RequestMethod.POST)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doOther</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ModelAndView mv  = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        mv.addObject(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;====欢迎使用springmvc做web开发====&quot;</span>);</span><br><span class="line">        mv.addObject(<span class="string">&quot;fun&quot;</span>,<span class="string">&quot;执行的是doOther方法&quot;</span>);</span><br><span class="line">        mv.setViewName(<span class="string">&quot;other&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> mv;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//不指定请求方式，没有限制</span></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/first.do&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doFirst</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="params"><span class="function">                                HttpServletResponse response,</span></span></span><br><span class="line"><span class="params"><span class="function">                                HttpSession session)</span></span>&#123;</span><br><span class="line">        ModelAndView mv  = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        mv.addObject(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;====欢迎使用springmvc做web开发====&quot;</span> + request.getParameter(<span class="string">&quot;name&quot;</span>));</span><br><span class="line">        mv.addObject(<span class="string">&quot;fun&quot;</span>,<span class="string">&quot;执行的是doFirst方法&quot;</span>);</span><br><span class="line">        mv.setViewName(<span class="string">&quot;other&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> mv;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/codingPupil.github.io/tags/SpringMVC/" rel="tag"># SpringMVC</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/codingPupil.github.io/2021/05/14/Spring%E9%9D%A2%E7%BB%8F/" rel="prev" title="Spring面经">
+      <i class="fa fa-chevron-left"></i> Spring面经
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-HelloWorld"><span class="nav-number">1.</span> <span class="nav-text">1.HelloWorld</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">实现步骤：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#springmvc%E8%AF%B7%E6%B1%82%E7%9A%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">springmvc请求的处理流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#springmvc%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-number">1.3.</span> <span class="nav-text">springmvc执行过程源代码分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8"><span class="nav-number">1.4.</span> <span class="nav-text">视图解析器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RequestMapping"><span class="nav-number">2.</span> <span class="nav-text">RequestMapping</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="pupil"
+      src="/codingPupil.github.io/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">pupil</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/codingPupil.github.io/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/codingPupil.github.io/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">pupil</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/codingPupil.github.io/lib/anime.min.js"></script>
+  <script src="/codingPupil.github.io/lib/velocity/velocity.min.js"></script>
+  <script src="/codingPupil.github.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/codingPupil.github.io/js/utils.js"></script>
+
+<script src="/codingPupil.github.io/js/motion.js"></script>
+
+
+<script src="/codingPupil.github.io/js/schemes/muse.js"></script>
+
+
+<script src="/codingPupil.github.io/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
