@@ -145,6 +145,77 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.codingpupii.com/2021/05/18/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9D%A2%E7%BB%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="pupil">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/18/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9D%A2%E7%BB%8F/" class="post-title-link" itemprop="url">操作系统面经</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-05-18 00:00:00 / Modified: 12:17:32" itemprop="dateCreated datePublished" datetime="2021-05-18T00:00:00+08:00">2021-05-18</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-（美团、京东）进程和线程的区别？"><a href="#1-（美团、京东）进程和线程的区别？" class="headerlink" title="1.（美团、京东）进程和线程的区别？"></a>1.（美团、京东）进程和线程的区别？</h1><p>答：</p>
+<p>进程是资源（包括内存、打开的文件等）分配的单位，线程是 CPU 调度的单位；<br>进程拥有一个完整的资源平台，而线程只独享必不可少的资源，如寄存器和栈；<br>线程同样具有就绪、阻塞、执行三种基本状态，1同样具有状态之间的转换关系；<br>线程能减少并发执行的时间和空间开销；</p>
+<h1 id="2-（美团、京东）进程调度方式"><a href="#2-（美团、京东）进程调度方式" class="headerlink" title="2.（美团、京东）进程调度方式"></a>2.（美团、京东）进程调度方式</h1><p>答</p>
+<p>可抢占式（可剥夺式，preemptive)：就绪队列中一旦有某进程的优先级高于当前正在执行的进程的优先级时，操作系统便立即进行进程调度，完成进程切换。<br>不可抢占式（不可剥夺式non_preemptive）：即使在就绪队列存在有某进程优先级高于当前正在执行的进程的优先级时，当前进程仍将占用处理机执行，直到该进程自己进入阻塞状态，或时间片用完，或在执行完系统调用后准备返回用户进程前的时刻，才重新发生调度让出处理机。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/codingPupiI/cdn/1.jpg" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/codingPupiI/cdn/2.jpg" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/codingPupiI/cdn/3.jpg" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/codingPupiI/cdn/4.jpg" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/codingPupiI/cdn/5.jpg" alt="img"></p>
+<h1 id="3-了解TCP吗？T-谈谈三次握手的流程？了解滑动窗口吗？"><a href="#3-了解TCP吗？T-谈谈三次握手的流程？了解滑动窗口吗？" class="headerlink" title="3.了解TCP吗？T)谈谈三次握手的流程？了解滑动窗口吗？"></a>3.了解TCP吗？T)谈谈三次握手的流程？了解滑动窗口吗？</h1><p>答：<br>（1）TCP 是面向连接的、可靠的、基于字节流的传输层通信协议。<br>面向连接：一定是「一对一」才能连接，不能像 UDP 协议可以一个主机同时向多个主机发送消息，也就是一对多是无法做到的<br>可靠的：无论的网络链路中出现了怎样的链路变化，TCP 都可以保证一个报文一定能够到达接收端；<br>字节流：消息是「没有边界」的，所以无论我们消息有多大都可以进行传输。并且消息是「有序的」，当「前一个」消息没有收到的时候，即使它先收到了后面的字节，那么也不能扔给应用层去处理，同时对「重复」的报文会自动丢弃。</p>
+<p>（2）SYN=1表示连接请求报文或请求确认报文<br>seq为序号位占4个字节<br>ack表示期望下一段报文的第1个字节<br>3.数据包的往返时间越长，通信的效率就越低。为解决这个问题，TCP 引入了窗口这个概念。即使在往返时间较长的情况下，它也不会降低网络通信的效率。窗口大小就是指无需等待确认应答，而可以继续发送数据的最大值。窗口的实现实际上是操作系统开辟的一个缓存空间，发送方主机在等到确认应答返回之前，必须在缓冲区中保留已发送的数据。如果按期收到确认应答，此时数据就可以从缓存区清除。</p>
+<h1 id="4-（京东）了解操作系统吗？"><a href="#4-（京东）了解操作系统吗？" class="headerlink" title="4.（京东）了解操作系统吗？"></a>4.（京东）了解操作系统吗？</h1><p>2.<br>3.进程是资源（包括内存、打开的文件等）分配的单位，线程是 CPU 调度的单位；<br>进程拥有一个完整的资源平台，而线程只独享必不可少的资源，如寄存器和栈；<br>线程同样具有就绪、阻塞、执行三种基本状态，1同样具有状态之间的转换关系；<br>线程能减少并发执行的时间和空间开销；</p>
+<p>[  ] T)TCP三次握手过程，为什么三次，不是四次、两次？<br>答：<br>通过三次握手能防止历史连接的建立，能减少双方不必要的资源开销，能帮助双方同步初始化序列号。序列号能够保证数据包不重复、不丢弃和按序传输。<br>不使用「两次握手」和「四次握手」的原因：<br>• 「两次握手」：无法防止历史连接的建立，会造成双方资源的浪费，也无法可靠的同步双方序列号；<br>• 「四次握手」：三次握手就已经理论上最少可靠连接建立，所以不需要使用更多的通信次数。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://www.codingpupii.com/2021/05/14/SpringMVC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -657,83 +728,6 @@
 <p><img src="/2021/05/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210514160929942.png" alt="image-20210514160929942"></p>
 <p>数据包的往返时间越长，通信的效率就越低。为解决这个问题，TCP 引入了窗口这个概念。即使在往返时间较长的情况下，它也不会降低网络通信的效率。窗口大小就是指无需等待确认应答，而可以继续发送数据的最大值。窗口的实现实际上是操作系统开辟的一个缓存空间，发送方主机在等到确认应答返回之前，必须在缓冲区中保留已发送的数据。如果按期收到确认应答，此时数据就可以从缓存区清除。</p>
 <h1 id="11-（shopee）不考虑服务器性能，TCP连接数量受什么限制？"><a href="#11-（shopee）不考虑服务器性能，TCP连接数量受什么限制？" class="headerlink" title="11.（shopee）不考虑服务器性能，TCP连接数量受什么限制？"></a>11.（shopee）不考虑服务器性能，TCP连接数量受什么限制？</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.codingpupii.com/2021/05/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9D%A2%E7%BB%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="pupil">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9D%A2%E7%BB%8F/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-05-12 20:56:46" itemprop="dateCreated datePublished" datetime="2021-05-12T20:56:46+08:00">2021-05-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-18 09:49:22" itemprop="dateModified" datetime="2021-05-18T09:49:22+08:00">2021-05-18</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-（美团、京东）进程和线程的区别？"><a href="#1-（美团、京东）进程和线程的区别？" class="headerlink" title="1.（美团、京东）进程和线程的区别？"></a>1.（美团、京东）进程和线程的区别？</h1><p>答：</p>
-<p>进程是资源（包括内存、打开的文件等）分配的单位，线程是 CPU 调度的单位；<br>进程拥有一个完整的资源平台，而线程只独享必不可少的资源，如寄存器和栈；<br>线程同样具有就绪、阻塞、执行三种基本状态，1同样具有状态之间的转换关系；<br>线程能减少并发执行的时间和空间开销；</p>
-<h1 id="2-（美团、京东）进程调度方式"><a href="#2-（美团、京东）进程调度方式" class="headerlink" title="2.（美团、京东）进程调度方式"></a>2.（美团、京东）进程调度方式</h1><p>答</p>
-<p>可抢占式（可剥夺式，preemptive)：就绪队列中一旦有某进程的优先级高于当前正在执行的进程的优先级时，操作系统便立即进行进程调度，完成进程切换。<br>不可抢占式（不可剥夺式non_preemptive）：即使在就绪队列存在有某进程优先级高于当前正在执行的进程的优先级时，当前进程仍将占用处理机执行，直到该进程自己进入阻塞状态，或时间片用完，或在执行完系统调用后准备返回用户进程前的时刻，才重新发生调度让出处理机。</p>
-<p><img src="file:///C:/Users/zzz/AppData/Local/Packages/SAMSUNGELECTRONICSCoLtd.SamsungNotes_wyx1vj98g3asy/LocalState/SPenSDK30/SPEN_0058434464_1/media/2@paste_210510_152423_213.jpg" alt="img"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/codingPupiI/cdn/test2.jpg" alt="img"></p>
-<p><img src="file:///C:/Users/zzz/AppData/Local/Packages/SAMSUNGELECTRONICSCoLtd.SamsungNotes_wyx1vj98g3asy/LocalState/SPenSDK30/SPEN_0058434464_1/media/4@paste_210510_153240_500.jpg" alt="img"></p>
-<p><img src="file:///C:/Users/zzz/AppData/Local/Packages/SAMSUNGELECTRONICSCoLtd.SamsungNotes_wyx1vj98g3asy/LocalState/SPenSDK30/SPEN_0058434464_1/media/5@paste_210510_153625_649.jpg" alt="img"><img src="file:///C:/Users/zzz/AppData/Local/Packages/SAMSUNGELECTRONICSCoLtd.SamsungNotes_wyx1vj98g3asy/LocalState/SPenSDK30/SPEN_0058434464_1/media/6@paste_210510_153953_536.jpg" alt="img"></p>
-<p><img src="file:///C:/Users/zzz/AppData/Local/Packages/SAMSUNGELECTRONICSCoLtd.SamsungNotes_wyx1vj98g3asy/LocalState/SPenSDK30/SPEN_0058434464_1/media/7@paste_210510_154037_968.jpg" alt="img"></p>
-<h1 id="3-了解TCP吗？T-谈谈三次握手的流程？了解滑动窗口吗？"><a href="#3-了解TCP吗？T-谈谈三次握手的流程？了解滑动窗口吗？" class="headerlink" title="3.了解TCP吗？T)谈谈三次握手的流程？了解滑动窗口吗？"></a>3.了解TCP吗？T)谈谈三次握手的流程？了解滑动窗口吗？</h1><p>答：<br>（1）TCP 是面向连接的、可靠的、基于字节流的传输层通信协议。<br>面向连接：一定是「一对一」才能连接，不能像 UDP 协议可以一个主机同时向多个主机发送消息，也就是一对多是无法做到的<br>可靠的：无论的网络链路中出现了怎样的链路变化，TCP 都可以保证一个报文一定能够到达接收端；<br>字节流：消息是「没有边界」的，所以无论我们消息有多大都可以进行传输。并且消息是「有序的」，当「前一个」消息没有收到的时候，即使它先收到了后面的字节，那么也不能扔给应用层去处理，同时对「重复」的报文会自动丢弃。</p>
-<p>（2）SYN=1表示连接请求报文或请求确认报文<br>seq为序号位占4个字节<br>ack表示期望下一段报文的第1个字节<br>3.数据包的往返时间越长，通信的效率就越低。为解决这个问题，TCP 引入了窗口这个概念。即使在往返时间较长的情况下，它也不会降低网络通信的效率。窗口大小就是指无需等待确认应答，而可以继续发送数据的最大值。窗口的实现实际上是操作系统开辟的一个缓存空间，发送方主机在等到确认应答返回之前，必须在缓冲区中保留已发送的数据。如果按期收到确认应答，此时数据就可以从缓存区清除。</p>
-<h1 id="4-（京东）了解操作系统吗？"><a href="#4-（京东）了解操作系统吗？" class="headerlink" title="4.（京东）了解操作系统吗？"></a>4.（京东）了解操作系统吗？</h1><p>2.<br>3.进程是资源（包括内存、打开的文件等）分配的单位，线程是 CPU 调度的单位；<br>进程拥有一个完整的资源平台，而线程只独享必不可少的资源，如寄存器和栈；<br>线程同样具有就绪、阻塞、执行三种基本状态，1同样具有状态之间的转换关系；<br>线程能减少并发执行的时间和空间开销；</p>
-<p>[  ] T)TCP三次握手过程，为什么三次，不是四次、两次？<br>答：<br>通过三次握手能防止历史连接的建立，能减少双方不必要的资源开销，能帮助双方同步初始化序列号。序列号能够保证数据包不重复、不丢弃和按序传输。<br>不使用「两次握手」和「四次握手」的原因：<br>• 「两次握手」：无法防止历史连接的建立，会造成双方资源的浪费，也无法可靠的同步双方序列号；<br>• 「四次握手」：三次握手就已经理论上最少可靠连接建立，所以不需要使用更多的通信次数。</p>
-
       
     </div>
 
@@ -1299,7 +1293,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
