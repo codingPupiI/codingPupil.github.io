@@ -145,70 +145,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.codingpupii.com/2021/05/14/Spring%E9%9D%A2%E7%BB%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="pupil">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/14/Spring%E9%9D%A2%E7%BB%8F/" class="post-title-link" itemprop="url">Spring面经</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-05-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-05-14T00:00:00+08:00">2021-05-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-16 16:10:54" itemprop="dateModified" datetime="2021-05-16T16:10:54+08:00">2021-05-16</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-（京东）Spring的动态代理？"><a href="#1-（京东）Spring的动态代理？" class="headerlink" title="1.（京东）Spring的动态代理？"></a>1.（京东）Spring的动态代理？</h1><h1 id="2-（腾讯）AOP的实现？"><a href="#2-（腾讯）AOP的实现？" class="headerlink" title="2.（腾讯）AOP的实现？"></a>2.（腾讯）AOP的实现？</h1><h1 id="3-（京东）了解分页吗？是真正的分页吗？"><a href="#3-（京东）了解分页吗？是真正的分页吗？" class="headerlink" title="3.（京东）了解分页吗？是真正的分页吗？"></a>3.（京东）了解分页吗？是真正的分页吗？</h1><h1 id="4-（腾讯）Spring-IOC、AOP"><a href="#4-（腾讯）Spring-IOC、AOP" class="headerlink" title="4.（腾讯）Spring IOC、AOP"></a>4.（腾讯）Spring IOC、AOP</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://www.codingpupii.com/2021/05/14/SpringMVC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -312,6 +248,70 @@
 <h1 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="RequestMapping"></a>RequestMapping</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 	  <span class="doctag">@RequestMapping</span>:</span></span><br><span class="line"><span class="comment"> *    value ： 所有请求地址的公共部分，叫做模块名称</span></span><br><span class="line"><span class="comment"> *    位置： 放在类的上面</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/user&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@RequestMapping</span> : 请求映射</span></span><br><span class="line"><span class="comment">     *             属性： method， 表示请求的方式。 它的值RequestMethod类枚举值。</span></span><br><span class="line"><span class="comment">     *                    例如表示get请求方式， RequestMethod.GET</span></span><br><span class="line"><span class="comment">     *                    post方式， RequestMethod.POST</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *  你不用get方式，错误是：</span></span><br><span class="line"><span class="comment">     *  HTTP Status 405 - Request method &#x27;GET&#x27; not supported</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">//指定some.do使用get请求方式</span></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/some.do&quot;,method = RequestMethod.GET)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doSome</span><span class="params">()</span></span>&#123;  <span class="comment">// doGet()--service请求处理</span></span><br><span class="line">        <span class="comment">//处理some.do请求了。 相当于service调用处理完成了。</span></span><br><span class="line">        ModelAndView mv  = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        mv.addObject(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;欢迎使用springmvc做web开发&quot;</span>);</span><br><span class="line">        mv.addObject(<span class="string">&quot;fun&quot;</span>,<span class="string">&quot;执行的是doSome方法&quot;</span>);</span><br><span class="line">        mv.setViewName(<span class="string">&quot;show&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> mv;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//指定other.do是post请求方式</span></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/other.do&quot;,method = RequestMethod.POST)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doOther</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ModelAndView mv  = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        mv.addObject(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;====欢迎使用springmvc做web开发====&quot;</span>);</span><br><span class="line">        mv.addObject(<span class="string">&quot;fun&quot;</span>,<span class="string">&quot;执行的是doOther方法&quot;</span>);</span><br><span class="line">        mv.setViewName(<span class="string">&quot;other&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> mv;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//不指定请求方式，没有限制</span></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/first.do&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doFirst</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="params"><span class="function">                                HttpServletResponse response,</span></span></span><br><span class="line"><span class="params"><span class="function">                                HttpSession session)</span></span>&#123;</span><br><span class="line">        ModelAndView mv  = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        mv.addObject(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;====欢迎使用springmvc做web开发====&quot;</span> + request.getParameter(<span class="string">&quot;name&quot;</span>));</span><br><span class="line">        mv.addObject(<span class="string">&quot;fun&quot;</span>,<span class="string">&quot;执行的是doFirst方法&quot;</span>);</span><br><span class="line">        mv.setViewName(<span class="string">&quot;other&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> mv;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.codingpupii.com/2021/05/14/Spring%E9%9D%A2%E7%BB%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="pupil">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/14/Spring%E9%9D%A2%E7%BB%8F/" class="post-title-link" itemprop="url">Spring面经</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-05-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-05-14T00:00:00+08:00">2021-05-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-05-16 16:10:54" itemprop="dateModified" datetime="2021-05-16T16:10:54+08:00">2021-05-16</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-（京东）Spring的动态代理？"><a href="#1-（京东）Spring的动态代理？" class="headerlink" title="1.（京东）Spring的动态代理？"></a>1.（京东）Spring的动态代理？</h1><h1 id="2-（腾讯）AOP的实现？"><a href="#2-（腾讯）AOP的实现？" class="headerlink" title="2.（腾讯）AOP的实现？"></a>2.（腾讯）AOP的实现？</h1><h1 id="3-（京东）了解分页吗？是真正的分页吗？"><a href="#3-（京东）了解分页吗？是真正的分页吗？" class="headerlink" title="3.（京东）了解分页吗？是真正的分页吗？"></a>3.（京东）了解分页吗？是真正的分页吗？</h1><h1 id="4-（腾讯）Spring-IOC、AOP"><a href="#4-（腾讯）Spring-IOC、AOP" class="headerlink" title="4.（腾讯）Spring IOC、AOP"></a>4.（腾讯）Spring IOC、AOP</h1>
       
     </div>
 
