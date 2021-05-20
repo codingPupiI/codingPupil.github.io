@@ -20,28 +20,33 @@
     var CONFIG = {"hostname":"www.codingpupii.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://www.codingpupii.com/index.html">
+  <meta name="description" content="一、概述三层的职责  界面层（表示层，视图层）： 主要功能是接受 用户的 数据 ，显示请求的处理结果。使用 web页面和用户交互，手机 app也就是表示层的，用户在 app中操作，业务逻辑在服务器端处理。（controller包、springmvc） 业务逻辑层 ：接收表示传递过来的数据，检查数据，计算业务逻辑，调用数据访问层获取数据。（service包，spring） 数据访问层 （持久层）与数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBatis">
+<meta property="og:url" content="https://www.codingpupii.com/2021/05/16/MyBatis/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、概述三层的职责  界面层（表示层，视图层）： 主要功能是接受 用户的 数据 ，显示请求的处理结果。使用 web页面和用户交互，手机 app也就是表示层的，用户在 app中操作，业务逻辑在服务器端处理。（controller包、springmvc） 业务逻辑层 ：接收表示传递过来的数据，检查数据，计算业务逻辑，调用数据访问层获取数据。（service包，spring） 数据访问层 （持久层）与数">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-05-20T07:24:59.466Z">
 <meta property="article:author" content="pupil">
+<meta property="article:tag" content="MyBatis">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://www.codingpupii.com/">
+<link rel="canonical" href="https://www.codingpupii.com/2021/05/16/MyBatis/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Hexo</title>
+  <title>MyBatis | Hexo</title>
   
 
 
@@ -139,639 +144,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.codingpupii.com/2021/05/21/java%E9%9D%A2%E7%BB%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="pupil">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/21/java%E9%9D%A2%E7%BB%8F/" class="post-title-link" itemprop="url">Java面经</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-05-21 00:00:00" itemprop="dateCreated datePublished" datetime="2021-05-21T00:00:00+08:00">2021-05-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-20 15:23:37" itemprop="dateModified" datetime="2021-05-20T15:23:37+08:00">2021-05-20</time>
-              </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-（美团）java语言特性（封装继承多态），举例子说明以上三种特性"><a href="#1-（美团）java语言特性（封装继承多态），举例子说明以上三种特性" class="headerlink" title="1.（美团）java语言特性（封装继承多态），举例子说明以上三种特性"></a>1.（美团）java语言特性（封装继承多态），举例子说明以上三种特性</h1><p>答：</p>
-<p><img src="/2021/05/21/java%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210512211758225.png" alt="image-20210512211758225"></p>
-<p><img src="/2021/05/21/java%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210512211821559.png" alt="image-20210512211821559"></p>
-<p><img src="/2021/05/21/java%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210512211845051.png" alt="image-20210512211845051"></p>
-<h1 id="2-（美团）接口和抽象类区别"><a href="#2-（美团）接口和抽象类区别" class="headerlink" title="2.（美团）接口和抽象类区别"></a>2.（美团）接口和抽象类区别</h1><p>答：</p>
-<p>接口和抽象类的概念不一样。接口是对动作的抽象，抽象类是对根源的抽象。</p>
-<p>抽象类表示的是，这个对象是什么。接口表示的是，这个对象能做什么。比如，男人，女人，这两个类（如果是类的话……），他们的抽象类是人。说明，他们都是人。</p>
-<p>人可以吃东西，狗也可以吃东西，你可以把“吃东西”定义成一个接口，然后让这些类去实现它.</p>
-<p>所以，在高级语言上，一个类只能继承一个类（抽象类）(正如人不可能同时是生物和非生物)，但是可以实现多个接口(吃饭接口、走路接口)。</p>
-<p>第一点． 接口是抽象类的变体，接口中所有的方法都是抽象的。而抽象类是声明方法的存在而不去实现它的类。<br>第二点． 接口可以多继承，抽象类不行<br>第三点． 接口定义方法，不能实现，而抽象类可以实现部分方法。<br>第四点． 接口中基本数据类型为static 而抽类象不是的。</p>
-<p>当你关注一个事物的本质的时候，用抽象类；当你关注一个操作的时候，用接口。</p>
-<p>抽象类的功能要远超过接口，但是，定义抽象类的代价高。因为高级语言来说（从实际设计上来说也是）每个类只能继承一个类。在这个类中，你必须继承或编写出其所有子类的</p>
-<p>所有共性。虽然接口在功能上会弱化许多，但是它只是针对一个动作的描述。而且你可以在一个类中同时实现多个接口。在设计阶段会降低难度的。</p>
-<h1 id="3-（美团）死锁举例说明"><a href="#3-（美团）死锁举例说明" class="headerlink" title="3.（美团）死锁举例说明"></a>3.（美团）死锁举例说明</h1><p>答：</p>
-<h1 id><a href="#" class="headerlink" title></a></h1><h1 id="4-（腾讯）volatile"><a href="#4-（腾讯）volatile" class="headerlink" title="4.（腾讯）volatile"></a>4.（腾讯）volatile</h1><h1 id="5-（腾讯）synchronized、ReentLock，之间区别"><a href="#5-（腾讯）synchronized、ReentLock，之间区别" class="headerlink" title="5.（腾讯）synchronized、ReentLock，之间区别"></a>5.（腾讯）synchronized、ReentLock，之间区别</h1><h1 id="6-（腾讯）synchronized锁升级过程"><a href="#6-（腾讯）synchronized锁升级过程" class="headerlink" title="6.（腾讯）synchronized锁升级过程"></a>6.（腾讯）synchronized锁升级过程</h1><h1 id="7-（腾讯）synchronized、ReentLock，之间区别"><a href="#7-（腾讯）synchronized、ReentLock，之间区别" class="headerlink" title="7.（腾讯）synchronized、ReentLock，之间区别"></a>7.（腾讯）synchronized、ReentLock，之间区别</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.codingpupii.com/2021/05/21/%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="pupil">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/21/%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">leetcode 常用方法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-05-21 00:00:00" itemprop="dateCreated datePublished" datetime="2021-05-21T00:00:00+08:00">2021-05-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-20 15:24:23" itemprop="dateModified" datetime="2021-05-20T15:24:23+08:00">2021-05-20</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-String2char"><a href="#1-String2char" class="headerlink" title="1.String2char[]"></a>1.String2char[]</h1><p>String.toCharArray()</p>
-<h1 id="2-Arr2List"><a href="#2-Arr2List" class="headerlink" title="2.Arr2List"></a>2.Arr2List</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Arr2List</span><span class="params">()</span></span>&#123;</span><br><span class="line">       String[] arr = <span class="keyword">new</span> String[] &#123; <span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>, <span class="string">&quot;d&quot;</span>, <span class="string">&quot;e&quot;</span> &#125;;</span><br><span class="line">       List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;(Arrays.asList(arr));</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="3-Arr2Set"><a href="#3-Arr2Set" class="headerlink" title="3.Arr2Set"></a>3.Arr2Set</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Arr2Set</span><span class="params">()</span></span>&#123;</span><br><span class="line">       String[] arr = <span class="keyword">new</span> String[] &#123; <span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>, <span class="string">&quot;d&quot;</span>, <span class="string">&quot;e&quot;</span> &#125;;</span><br><span class="line">       Set&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;(Arrays.asList(arr));</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="4-List2Arr"><a href="#4-List2Arr" class="headerlink" title="4.List2Arr"></a>4.List2Arr</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void List2arr()&#123;</span><br><span class="line">       List&lt;Integer&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">       Integer[] arr = (Integer[]) list.toArray(new Integer[list.size()]);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="5-List2Set"><a href="#5-List2Set" class="headerlink" title="5.List2Set"></a>5.List2Set</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public void List2Set()&#123;</span><br><span class="line">       List&lt;Integer&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">       Set&lt;Integer&gt; set = new HashSet&lt;&gt;();</span><br><span class="line">       set.addAll(list);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="6-char-2String-OR-char2String"><a href="#6-char-2String-OR-char2String" class="headerlink" title="6.char[]2String OR char2String"></a>6.char[]2String OR char2String</h1><p>String.valueOf(char[] or char)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.codingpupii.com/2021/05/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%9D%A2%E7%BB%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="pupil">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%9D%A2%E7%BB%8F/" class="post-title-link" itemprop="url">数据结构面经</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-05-20 00:00:00 / Modified: 15:22:48" itemprop="dateCreated datePublished" datetime="2021-05-20T00:00:00+08:00">2021-05-20</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-（京东，shopee）红黑树-和-平衡二叉树-AVL的区别？二者的效率？"><a href="#1-（京东，shopee）红黑树-和-平衡二叉树-AVL的区别？二者的效率？" class="headerlink" title="1.（京东，shopee）红黑树 和 平衡二叉树 AVL的区别？二者的效率？"></a>1.（京东，shopee）红黑树 和 平衡二叉树 AVL的区别？二者的效率？</h1><p>答：</p>
-<h1 id="2-（京东）ArrayList和LinkedList有什么区别"><a href="#2-（京东）ArrayList和LinkedList有什么区别" class="headerlink" title="2.（京东）ArrayList和LinkedList有什么区别"></a>2.（京东）ArrayList和LinkedList有什么区别</h1><p>答：</p>
-<p>1.ArrayList是实现了基于动态数组的数据结构，内部实现是基于内部数组Object[]，LinkedList基于链表的数据结构。 （LinkedList是双向链表，有next也有previous）<br>2.对于随机访问get和set，ArrayList优于LinkedList，因为LinkedList要移动指针。<br>3.对于新增和删除操作add和remove，LinkedList比较占优势，因为ArrayList要移动数据。<br>4.LinkedList空间消耗大，在LinkedList中有一个私有的内部类，定义如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Darrichan1/CDN/post/1.png" alt="测试图片"></p>
-<p><img src="file:///C:/Users/zzz/AppData/Local/Packages/SAMSUNGELECTRONICSCoLtd.SamsungNotes_wyx1vj98g3asy/LocalState/SPenSDK30/SPEN_0058974624_1/media/0@paste_210510_000144_378.jpg" alt="img"></p>
-<h1 id="3-（京东）HashMap的数据结构是什么样的？为什么新版本会引入-红黑树-？为什么不直接使用-红黑树-？"><a href="#3-（京东）HashMap的数据结构是什么样的？为什么新版本会引入-红黑树-？为什么不直接使用-红黑树-？" class="headerlink" title="3.（京东）HashMap的数据结构是什么样的？为什么新版本会引入 红黑树 ？为什么不直接使用 红黑树 ？"></a>3.（京东）HashMap的数据结构是什么样的？为什么新版本会引入 红黑树 ？为什么不直接使用 红黑树 ？</h1><p>答：</p>
-<p>1.HashMap在Java1.7里使用的是数组+链表的数据结构，在Java1.8里使用的是数组+链表+红黑树（当链表长度大于阈值（或者红黑树的边界值，默认为8）并且当前数组的长度大于64时，此时此索引位置上的所有数据改为使用红黑树存储）。<br>2.当链表长度大于阈值（或者红黑树的边界值，默认为8）并且当前数组的长度大于64时，红黑树效率更高<br>3.</p>
-<h1 id="4-（京东、腾讯）HashMap是线程安全的吗？ConcurrentHashMap的数据结构有什么区别？"><a href="#4-（京东、腾讯）HashMap是线程安全的吗？ConcurrentHashMap的数据结构有什么区别？" class="headerlink" title="4.（京东、腾讯）HashMap是线程安全的吗？ConcurrentHashMap的数据结构有什么区别？"></a>4.（京东、腾讯）HashMap是线程安全的吗？ConcurrentHashMap的数据结构有什么区别？</h1><p>答：</p>
-<p>（1）Hashmap 为什么线程不安全（hash 碰撞和扩容导致），HashMap 扩容的的时候可能会形成环形链表，造成死循环。要想实现线程安全，那么需要调用collections 类的静态方法synchronizeMap（）实现</p>
-<p><img src="/2021/05/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210514152749779.png" alt="image-20210514152749779"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.codingpupii.com/2021/05/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="pupil">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">设计模式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-05-20 00:00:00 / Modified: 15:24:02" itemprop="dateCreated datePublished" datetime="2021-05-20T00:00:00+08:00">2021-05-20</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a><font color="darkblue">设计模式</font></h1><h2 id="构建型模式"><a href="#构建型模式" class="headerlink" title="构建型模式"></a><font color="blue">构建型模式</font></h2><h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a><font color="darkgreen">工厂模式</font></h3><h4 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a><font color="purple">简单工厂模式</font></h4><p>水果工厂：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitFactory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Fruit <span class="title">create</span><span class="params">(String type)</span></span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (type)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;苹果&quot;</span>: <span class="keyword">return</span> <span class="keyword">new</span> Apple();</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;梨子&quot;</span>: <span class="keyword">return</span> <span class="keyword">new</span> Pear();</span><br><span class="line">            <span class="keyword">default</span>: <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">&quot;暂时没有这种水果&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>调用者：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        FruitFactory fruitFactory = <span class="keyword">new</span> FruitFactory();</span><br><span class="line">        Fruit apple = fruitFactory.create(<span class="string">&quot;苹果&quot;</span>);</span><br><span class="line">        Fruit pear = fruitFactory.create(<span class="string">&quot;梨子&quot;</span>);</span><br><span class="line">        apple.eat();</span><br><span class="line">        pear.eat();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.codingpupii.com/2021/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="pupil">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/" class="post-title-link" itemprop="url">计算机网络面经</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-05-20 00:00:00 / Modified: 15:21:50" itemprop="dateCreated datePublished" datetime="2021-05-20T00:00:00+08:00">2021-05-20</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-（美团）TCP，UDP区别"><a href="#1-（美团）TCP，UDP区别" class="headerlink" title="1.（美团）TCP，UDP区别"></a>1.（美团）TCP，UDP区别</h1><p>答：</p>
-<p><img src="/2021/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210514155925910.png" alt="image-20210514155925910"></p>
-<h1 id="2-（美团、腾讯、京东）TCP三次握手过程"><a href="#2-（美团、腾讯、京东）TCP三次握手过程" class="headerlink" title="2.（美团、腾讯、京东）TCP三次握手过程"></a>2.（美团、腾讯、京东）TCP三次握手过程</h1><p>答：</p>
-<p><img src="/2021/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210514160017451.png" alt="image-20210514160017451"></p>
-<p>SYN=1表示连接请求报文或请求确认报文<br>seq为序号位占4个字节<br>ack表示期望下一段报文的第1个字节</p>
-<h1 id="3-（美团）TCP可靠传输"><a href="#3-（美团）TCP可靠传输" class="headerlink" title="3.（美团）TCP可靠传输"></a>3.（美团）TCP可靠传输</h1><p>答：</p>
-<p>1.数据包校验：目的是检测数据在传输过程中的任何变化，若校验出包有错，则丢弃报文段并且不给出响应，这时TCP 发送数据端超时后会重发数据；<br>2.对失序数据包重排序：既然TCP 报文段作为IP 数据报来传输，而IP 数据报的到达可能会失序，因此TCP 报文段的到达也可能会失序。TCP 将对失序数据进行重新排序，然后才交给应用层；<br>3.丢弃重复数据：对于重复数据，能够丢弃重复数据；<br>4.应答机制：当TCP 收到发自TCP 连接另一端的数据，它将发送一个确认。这个确认不是立即发送，通常将推迟几分之一秒；<br>5.超时重发：当TCP 发出一个段后，它启动一个定时器，等待目的端确认收到这个报文段。如果不能及时收到一个确认，将重发这个报文段；<br>6.流量控制：TCP 连接的每一方都有固定大小的缓冲空间。TCP 的接收端只允许另一端发送接收端缓冲区所能接纳的数据，这可以防止较快主机致使较慢主机的缓冲区溢出，这就是流量控制。TCP 使用的流量控制协议是可变大小的滑动窗口协议。</p>
-<h1 id="4-（美团）http，https区别"><a href="#4-（美团）http，https区别" class="headerlink" title="4.（美团）http，https区别"></a>4.（美团）http，https区别</h1><p>答：</p>
-<blockquote>
-<p>1）https 协议需要到ca 申请证书，一般免费证书较少，因而需要一定费用。</p>
-<p>2）http 是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl<br>加密传输协议。<br>3）http 和https 使用的是完全不同的连接方式，用的端口也不一样，前者<br>是80，后者是443。<br>4）http 的连接很简单，是无状态的；HTTPS 协议是由SSL+HTTP 协议构<br>建的可进行加密传输、身份认证的网络协议，比http 协议安全。</p>
-<ol>
-<li><p>HTTP 的URL 以http:// 开头， 而HTTPS 的URL 以https://<br> 开头</p>
-</li>
-<li><p>HTTP 是不安全的， 而HTTPS 是安全的</p>
-</li>
-<li><p>在OSI 网络模型中， HTTP 工作于应用层， 而HTTPS 工作在传输层</p>
-</li>
-<li><p>HTTP 无需加密， 而HTTPS 对传输的数据进行加密</p>
-</li>
-<li><p>HTTP 无需证书， 而HTTPS 需要认证证书</p>
-<p><img src="/2021/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210514160313334.png" alt="image-20210514160313334"></p>
-</li>
-</ol>
-</blockquote>
-<h1 id="5-（美团）cookie，session区别"><a href="#5-（美团）cookie，session区别" class="headerlink" title="5.（美团）cookie，session区别"></a>5.（美团）cookie，session区别</h1><p>答：</p>
-<p><img src="/2021/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210514160103197.png" alt="image-20210514160103197"></p>
-<h1 id="6-（美团）session保存"><a href="#6-（美团）session保存" class="headerlink" title="6.（美团）session保存"></a>6.（美团）session保存</h1><p>答：</p>
-<h1 id="7-（美团）http数据格式"><a href="#7-（美团）http数据格式" class="headerlink" title="7.（美团）http数据格式"></a>7.（美团）http数据格式</h1><p>答：</p>
-<p><img src="/2021/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210513201141644.png" alt="image-20210513201141644"></p>
-<p><img src="/2021/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210513202033021.png" alt="image-20210513202033021"></p>
-<h1 id="8-（美团）post-get区别"><a href="#8-（美团）post-get区别" class="headerlink" title="8.（美团）post,get区别"></a>8.（美团）post,get区别</h1><p>答：</p>
-<p>1、传送方式：get通过地址栏传输，post通过报文传输。</p>
-<p>2、传送长度：get参数有长度限制（受限于url长度），而post无限制</p>
-<p>3、GET和POST还有一个重大区别，简单的说：</p>
-<p>GET产生一个TCP数据包；POST产生两个TCP数据包</p>
-<p>长的说：</p>
-<p>对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200（返回数据）；</p>
-<p>而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。</p>
-<p>也就是说，GET只需要汽车跑一趟就把货送到了，而POST得跑两趟，第一趟，先去和服务器打个招呼“嗨，我等下要送一批货来，你们打开门迎接我”，然后再回头把货送过去。</p>
-<p>因为POST需要两步，时间上消耗的要多一点，看起来GET比POST更有效。因此Yahoo团队有推荐用GET替换POST来优化网站性能。但这是一个坑！跳入需谨慎。为什么？</p>
-<p>\1. GET与POST都有自己的语义，不能随便混用。</p>
-<p>\2. 据研究，在网络环境好的情况下，发一次包的时间和发两次包的时间差别基本可以无视。而在网络环境差的情况下，两次包的TCP在验证数据包完整性上，有非常大的优点。</p>
-<p>\3. 并不是所有浏览器都会在POST中发送两次包，Firefox就只发送一次。</p>
-<p><strong>建议：</strong></p>
-<p>1、get方式的安全性较Post方式要差些，包含机密信息的话，建议用Post数据提交方式；</p>
-<p>2、在做数据查询时，建议用Get方式；而在做数据添加、修改或删除时，建议用Post方式；</p>
-<p>GET在浏览器回退时是无害的，而POST会再次提交请求。</p>
-<p>GET产生的URL地址可以被Bookmark，而POST不可以。</p>
-<p>GET请求会被浏览器主动cache，而POST不会，除非手动设置。</p>
-<p>GET请求只能进行url编码，而POST支持多种编码方式。</p>
-<p>GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。</p>
-<p>GET请求在URL中传送的参数是有长度限制的，而POST么有。</p>
-<p>对参数的数据类型，GET只接受ASCII字符，而POST没有限制。</p>
-<p>GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。</p>
-<p>GET参数通过URL传递，POST放在Request body中</p>
-<h1 id="9-（腾讯）TCP三次握手过程，为什么三次，不是四次、两次？"><a href="#9-（腾讯）TCP三次握手过程，为什么三次，不是四次、两次？" class="headerlink" title="9.（腾讯）TCP三次握手过程，为什么三次，不是四次、两次？"></a>9.（腾讯）TCP三次握手过程，为什么三次，不是四次、两次？</h1><p>答：</p>
-<p><img src="/2021/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210514160549747.png" alt="image-20210514160549747"></p>
-<p>通过三次握手能防止历史连接的建立，能减少双方不必要的资源开销，能帮助双方同步初始化序列号。序列号能够保证数据包不重复、不丢弃和按序传输。<br>不使用「两次握手」和「四次握手」的原因：<br>• 「两次握手」：无法防止历史连接的建立，会造成双方资源的浪费，也无法可靠的同步双方序列号；<br>• 「四次握手」：三次握手就已经理论上最少可靠连接建立，所以不需要使用更多的通信次数。</p>
-<h1 id="10-（京东）了解滑动窗口吗？"><a href="#10-（京东）了解滑动窗口吗？" class="headerlink" title="10.（京东）了解滑动窗口吗？"></a>10.（京东）了解滑动窗口吗？</h1><p>答：</p>
-<p><img src="/2021/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210514160915284.png" alt="image-20210514160915284">s</p>
-<p><img src="/2021/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210514160929942.png" alt="image-20210514160929942"></p>
-<p>数据包的往返时间越长，通信的效率就越低。为解决这个问题，TCP 引入了窗口这个概念。即使在往返时间较长的情况下，它也不会降低网络通信的效率。窗口大小就是指无需等待确认应答，而可以继续发送数据的最大值。窗口的实现实际上是操作系统开辟的一个缓存空间，发送方主机在等到确认应答返回之前，必须在缓冲区中保留已发送的数据。如果按期收到确认应答，此时数据就可以从缓存区清除。</p>
-<h1 id="11-（shopee）不考虑服务器性能，TCP连接数量受什么限制？"><a href="#11-（shopee）不考虑服务器性能，TCP连接数量受什么限制？" class="headerlink" title="11.（shopee）不考虑服务器性能，TCP连接数量受什么限制？"></a>11.（shopee）不考虑服务器性能，TCP连接数量受什么限制？</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.codingpupii.com/2021/05/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E9%9D%A2%E7%BB%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="pupil">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E9%9D%A2%E7%BB%8F/" class="post-title-link" itemprop="url">设计模式面经</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-05-20 00:00:00 / Modified: 15:20:47" itemprop="dateCreated datePublished" datetime="2021-05-20T00:00:00+08:00">2021-05-20</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="京东-设计模式都了解哪些？单例模式的懒汉式和饿汉式？注意什么？"><a href="#京东-设计模式都了解哪些？单例模式的懒汉式和饿汉式？注意什么？" class="headerlink" title="(京东)设计模式都了解哪些？单例模式的懒汉式和饿汉式？注意什么？"></a>(京东)设计模式都了解哪些？单例模式的懒汉式和饿汉式？注意什么？</h1><p>（2）<br>——饿汉式：变量在声明时便初始化。饿汉式有一个弊端，那就是即使这个单例不需要使用，它也会在类加载之后立即创建出来，占用一块内存，并增加类初始化时间。<br>——懒汉式：先声明一个空变量，需要用时才初始化。我们先声明了一个初始值为 null 的 instance 变量，当需要使用时判断此变量是否已被初始化，没有初始化的话才 new 一个实例出来。</p>
-<p><img src="file:///C:/Users/zzz/AppData/Local/Packages/SAMSUNGELECTRONICSCoLtd.SamsungNotes_wyx1vj98g3asy/LocalState/SPenSDK30/SPEN_0058172001_1/media/0@0_210511_091204_374.jpg" alt="img">（3)<br>懒汉式单例乍一看没什么问题，但其实它不是线程安全的。<br>JVM 底层为了优化程序运行效率，可能会对我们的代码进行指令重排序，在一些特殊情况下会导致出现空指针，为了防止这个问题，更进一步的优化是给 instance 变量加上 volatile 关键字。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.codingpupii.com/2021/05/18/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9D%A2%E7%BB%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="pupil">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/18/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9D%A2%E7%BB%8F/" class="post-title-link" itemprop="url">操作系统面经</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-05-18 00:00:00" itemprop="dateCreated datePublished" datetime="2021-05-18T00:00:00+08:00">2021-05-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-20 15:25:39" itemprop="dateModified" datetime="2021-05-20T15:25:39+08:00">2021-05-20</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-（美团、京东）进程和线程的区别？"><a href="#1-（美团、京东）进程和线程的区别？" class="headerlink" title="1.（美团、京东）进程和线程的区别？"></a>1.（美团、京东）进程和线程的区别？</h1><p>答：</p>
-<p>进程是资源（包括内存、打开的文件等）分配的单位，线程是 CPU 调度的单位；<br>进程拥有一个完整的资源平台，而线程只独享必不可少的资源，如寄存器和栈；<br>线程同样具有就绪、阻塞、执行三种基本状态，1同样具有状态之间的转换关系；<br>线程能减少并发执行的时间和空间开销；</p>
-<h1 id="2-（美团、京东）进程调度方式"><a href="#2-（美团、京东）进程调度方式" class="headerlink" title="2.（美团、京东）进程调度方式"></a>2.（美团、京东）进程调度方式</h1><p>答：</p>
-<p>可抢占式（可剥夺式，preemptive)：就绪队列中一旦有某进程的优先级高于当前正在执行的进程的优先级时，操作系统便立即进行进程调度，完成进程切换。<br>不可抢占式（不可剥夺式non_preemptive）：即使在就绪队列存在有某进程优先级高于当前正在执行的进程的优先级时，当前进程仍将占用处理机执行，直到该进程自己进入阻塞状态，或时间片用完，或在执行完系统调用后准备返回用户进程前的时刻，才重新发生调度让出处理机。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/codingPupiI/cdn/1.jpg" alt="img"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/codingPupiI/cdn/2.jpg" alt="img"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/codingPupiI/cdn/3.jpg" alt="img"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/codingPupiI/cdn/4.jpg" alt="img"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/codingPupiI/cdn/5.jpg" alt="img"></p>
-<h1 id="3-了解TCP吗？T-谈谈三次握手的流程？了解滑动窗口吗？"><a href="#3-了解TCP吗？T-谈谈三次握手的流程？了解滑动窗口吗？" class="headerlink" title="3.了解TCP吗？T)谈谈三次握手的流程？了解滑动窗口吗？"></a>3.了解TCP吗？T)谈谈三次握手的流程？了解滑动窗口吗？</h1><p>答：<br>（1）TCP 是面向连接的、可靠的、基于字节流的传输层通信协议。<br>面向连接：一定是「一对一」才能连接，不能像 UDP 协议可以一个主机同时向多个主机发送消息，也就是一对多是无法做到的<br>可靠的：无论的网络链路中出现了怎样的链路变化，TCP 都可以保证一个报文一定能够到达接收端；<br>字节流：消息是「没有边界」的，所以无论我们消息有多大都可以进行传输。并且消息是「有序的」，当「前一个」消息没有收到的时候，即使它先收到了后面的字节，那么也不能扔给应用层去处理，同时对「重复」的报文会自动丢弃。</p>
-<p>（2）SYN=1表示连接请求报文或请求确认报文<br>seq为序号位占4个字节<br>ack表示期望下一段报文的第1个字节<br>3.数据包的往返时间越长，通信的效率就越低。为解决这个问题，TCP 引入了窗口这个概念。即使在往返时间较长的情况下，它也不会降低网络通信的效率。窗口大小就是指无需等待确认应答，而可以继续发送数据的最大值。窗口的实现实际上是操作系统开辟的一个缓存空间，发送方主机在等到确认应答返回之前，必须在缓冲区中保留已发送的数据。如果按期收到确认应答，此时数据就可以从缓存区清除。</p>
-<h1 id="4-（京东）了解操作系统吗？"><a href="#4-（京东）了解操作系统吗？" class="headerlink" title="4.（京东）了解操作系统吗？"></a>4.（京东）了解操作系统吗？</h1><p>2.<br>3.进程是资源（包括内存、打开的文件等）分配的单位，线程是 CPU 调度的单位；<br>进程拥有一个完整的资源平台，而线程只独享必不可少的资源，如寄存器和栈；<br>线程同样具有就绪、阻塞、执行三种基本状态，1同样具有状态之间的转换关系；<br>线程能减少并发执行的时间和空间开销；</p>
-<p>[  ] T)TCP三次握手过程，为什么三次，不是四次、两次？<br>答：<br>通过三次握手能防止历史连接的建立，能减少双方不必要的资源开销，能帮助双方同步初始化序列号。序列号能够保证数据包不重复、不丢弃和按序传输。<br>不使用「两次握手」和「四次握手」的原因：<br>• 「两次握手」：无法防止历史连接的建立，会造成双方资源的浪费，也无法可靠的同步双方序列号；<br>• 「四次握手」：三次握手就已经理论上最少可靠连接建立，所以不需要使用更多的通信次数。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.codingpupii.com/2021/05/16/MySql%E9%9D%A2%E7%BB%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="pupil">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/16/MySql%E9%9D%A2%E7%BB%8F/" class="post-title-link" itemprop="url">MySql面经</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-05-16 00:00:00" itemprop="dateCreated datePublished" datetime="2021-05-16T00:00:00+08:00">2021-05-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-20 15:17:24" itemprop="dateModified" datetime="2021-05-20T15:17:24+08:00">2021-05-20</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-（京东）谈谈MySQL索引是怎么实现的？为什么要这样实现？有别的实现方式吗？"><a href="#1-（京东）谈谈MySQL索引是怎么实现的？为什么要这样实现？有别的实现方式吗？" class="headerlink" title="1.（京东）谈谈MySQL索引是怎么实现的？为什么要这样实现？有别的实现方式吗？"></a>1.（京东）谈谈MySQL索引是怎么实现的？为什么要这样实现？有别的实现方式吗？</h1><p>（1）</p>
-<p><img src="/2021/05/16/MySql%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210512153827345.png" alt="image-20210512153827345"></p>
-<p>（2）</p>
-<h1 id="2-（京东）聚簇索引和非聚簇索引？"><a href="#2-（京东）聚簇索引和非聚簇索引？" class="headerlink" title="2.（京东）聚簇索引和非聚簇索引？"></a>2.（京东）聚簇索引和非聚簇索引？</h1><p><img src="/2021/05/16/MySql%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210512153850848.png" alt="image-20210512153850848"></p>
-<h1 id="3-（京东）JDBC了解吗？使用的流程？两个Statement的区别？SQL注入是什么？"><a href="#3-（京东）JDBC了解吗？使用的流程？两个Statement的区别？SQL注入是什么？" class="headerlink" title="3.（京东）JDBC了解吗？使用的流程？两个Statement的区别？SQL注入是什么？"></a>3.（京东）JDBC了解吗？使用的流程？两个Statement的区别？SQL注入是什么？</h1><p>（2）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以mysql为例</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, SQLException</span>&#123;</span><br><span class="line">	<span class="comment">/*1.注册驱动（3种方法），依赖于驱动jar包的存在，否则无法通过编译</span></span><br><span class="line"><span class="comment">	DriverManager.registerDriver(new com.mysql.jdbc.Driver());*/</span></span><br><span class="line">	<span class="comment">//方法2：System.setProperties(&quot;jdbc.drivers&quot;,&quot;com.mysql.jdbc.Driver&quot;);</span></span><br><span class="line">	<span class="comment">//方法3：*****推荐使用******</span></span><br><span class="line">	Class.forName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//2.建立连接</span></span><br><span class="line">    Connection </span><br><span class="line">        conn=DriverManager.getConnection(<span class="string">&quot;jdbc:mysql://localhost:8086/jdbc&quot;</span>,<span class="string">&quot;zhipeng&quot;</span>,<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">    <span class="comment">//3.创建语句执行对象</span></span><br><span class="line">    java.sql.Statement st=conn.createStatement();<span class="comment">//使用Statement对象</span></span><br><span class="line">    <span class="comment">//4.执行语句</span></span><br><span class="line">    ResultSet rs=st.executeQuery(<span class="string">&quot;select * from T_User&quot;</span>);</span><br><span class="line">    <span class="comment">//5.处理结果</span></span><br><span class="line">    <span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">    System.out.print(rs.getObject(<span class="number">1</span>)+<span class="string">&quot;\t&quot;</span>+rs.getObject(<span class="number">2</span>)+<span class="string">&quot;\t&quot;</span>+rs.getObject(<span class="number">3</span>)+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//6.释放资源,资源rs、st、conn的释放顺序与创建顺序相反</span></span><br><span class="line">    rs.close();</span><br><span class="line">    st.close();</span><br><span class="line">    conn.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（3）</p>
-<h1 id="4-（腾迅）redis-数据结构介绍一下"><a href="#4-（腾迅）redis-数据结构介绍一下" class="headerlink" title="4.（腾迅）redis 数据结构介绍一下"></a>4.（腾迅）redis 数据结构介绍一下</h1><h1 id="5-（腾迅，shopee）索引类型，哈希索引和B-数索引区别，说了下为啥B-树"><a href="#5-（腾迅，shopee）索引类型，哈希索引和B-数索引区别，说了下为啥B-树" class="headerlink" title="5.（腾迅，shopee）索引类型，哈希索引和B+数索引区别，说了下为啥B+树"></a>5.（腾迅，shopee）索引类型，哈希索引和B+数索引区别，说了下为啥B+树</h1><p>（1）</p>
-<p><img src="/2021/05/16/MySql%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210512154042627.png" alt="image-20210512154042627"></p>
-<p><img src="/2021/05/16/MySql%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210512154056860.png" alt="image-20210512154056860"></p>
-<p>（2）</p>
-<p><img src="/2021/05/16/MySql%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210512154106515.png" alt="image-20210512154106515"></p>
-<p><img src="/2021/05/16/MySql%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210512154111915.png" alt="image-20210512154111915"></p>
-<p>（3）</p>
-<p><img src="/2021/05/16/MySql%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210512154121487.png" alt="image-20210512154121487"></p>
-<h1 id="6-（shopee）四个隔离级别"><a href="#6-（shopee）四个隔离级别" class="headerlink" title="6.（shopee）四个隔离级别"></a>6.（shopee）四个隔离级别</h1><p>答：</p>
-<ul>
-<li>Read uncommitted(未授权读取、读未提交)：<br>如果一个事务已经开始写数据，则另外一个事务则不允许同时进行写操作，但允许其他事务读此行数据。该隔离级别可以通过“排他写锁”实现。这样就避免了更新丢失，却可能出现脏读。也就是说事务B读取到了事务A未提交的数据。</li>
-<li>Read committed（授权读取、读提交）：<br>读取数据的事务允许其他事务继续访问该行数据，但是未提交的写事务将会禁止其他事务访问该行。该隔离级别避免了脏读，但是却可能出现不可重复读。事务A事先读取了数据，事务B紧接了更新了数据，并提交了事务，而事务A再次读取该数据时，数据已经发生了改变。</li>
-<li>Repeatable read（可重复读取）：<br>可重复读是指在一个事务内，多次读同一数据。在这个事务还没有结束时，另外一个事务也访问该同一数据。那么，在第一个事务中的两次读数据之间，即使第二个事务对数据进行修改，第一个事务两次读到的的数据是一样的。这样就发生了在一个事务内两次读到的数据是一样的，因此称为是可重复读。读取数据的事务将会禁止写事务（但允许读事务），写事务则禁止任何其他事务。这样避免了不可重复读取和脏读，但是有时可能出现幻象读。（读取数据的事务）这可以通过“共享读锁”和“排他写锁”实现。</li>
-<li>Serializable（序列化）：<br>提供严格的事务隔离。它要求事务序列化执行，事务只能一个接着一个地执行，但不能并发执行。如果仅仅通过“行级锁”是无法实现事务序列化的，必须通过其他机制保证新插入的数据不会被刚执行查询操作的事务访问到。序列化是最高的事务隔离级别，同时代价也花费最高，性能很低，一般很少使用，在该级别下，事务顺序执行，不仅可以避免脏读、不可重复读，还避免了幻像读。<br><img src="https://img-blog.csdn.net/20170725154818659" alt="这里写图片描述"></li>
-</ul>
-<p>大多数数据库的默认级别就是Read committed，比如Sql Server , Oracle。MySQL的默认隔离级别就是Repeatable read。</p>
-<h1 id="7-（美团）乐观锁悲观锁原理"><a href="#7-（美团）乐观锁悲观锁原理" class="headerlink" title="7.（美团）乐观锁悲观锁原理"></a>7.（美团）乐观锁悲观锁原理</h1><h1 id="8-（shopee）主从同步如何实现"><a href="#8-（shopee）主从同步如何实现" class="headerlink" title="8.（shopee）主从同步如何实现"></a>8.（shopee）主从同步如何实现</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -787,10 +163,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/16/MyBatis/" class="post-title-link" itemprop="url">MyBatis</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          MyBatis
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -820,7 +195,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p><strong>三层的职责</strong></p>
+        <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p><strong>三层的职责</strong></p>
 <ol>
 <li>界面层（表示层，视图层）： 主要功能是接受 用户的 数据 ，显示请求的处理结果。使用 web页面和用户交互，手机 app也就是表示层的，用户在 app中操作，业务逻辑在服务器端处理。（controller包、springmvc）</li>
 <li>业务逻辑层 ：接收表示传递过来的数据，检查数据，计算业务逻辑，调用数据访问层获取数据。（service包，spring）</li>
@@ -1036,147 +411,37 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    SqlSession sqlSession = MyBatisUtil.getSqlSession();</span><br><span class="line">    StudentDao dao = sqlSession.getMapper(StudentDao.class);</span><br><span class="line">    PageHelper.startPage(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line">    List&lt;Student&gt; studentList = dao.selectAll();</span><br><span class="line">    System.out.println(studentList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/MyBatis/" rel="tag"># MyBatis</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.codingpupii.com/2021/05/14/SpringMVC/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="pupil">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/14/SpringMVC/" class="post-title-link" itemprop="url">SpringMVC</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-05-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-05-14T00:00:00+08:00">2021-05-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-20 15:25:54" itemprop="dateModified" datetime="2021-05-20T15:25:54+08:00">2021-05-20</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-HelloWorld"><a href="#1-HelloWorld" class="headerlink" title="1.HelloWorld"></a>1.HelloWorld</h1><h2 id="实现步骤："><a href="#实现步骤：" class="headerlink" title="实现步骤："></a>实现步骤：</h2><ol>
-<li>新建web maven工程</li>
-<li>加入依赖<br>spring-webmvc依赖，间接把spring的依赖都加入到项目<br>jsp，servlet依赖</li>
-</ol>
-<p>3.重点： 在web.xml中注册springmvc框架的核心对象DispatcherServlet<br>   1)DispatcherServlet叫做中央调度器， 是一个servlet， 它的父类是继承HttpServlet<br>   2)DispatcherServlet页叫做前端控制器（front controller）<br>   3)DispatcherServlet负责接收用户提交的请求， 调用其它的控制器对象，<br>                      并把请求的处理结果显示给用户</p>
-<p>4.创建一个发起请求的页面 index.jsp</p>
-<p>5.创建控制器(处理器)类<br>  1）在类的上面加入@Controller注解，创建对象，并放入到springmvc容器中<br>  2）在类中的方法上面加入@RequestMapping注解。</p>
-<p>6.创建一个作为结果的jsp，显示请求的处理结果。</p>
-<p>7.创建springmvc的配置文件（spring的配置文件一样）<br>  1）声明组件扫描器， 指定@Contorller注解所在的包名<br>  2）声明视图解析器。帮助处理视图的。</p>
-<p>pom.xml 配置文件</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.bjpowernode<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>ch01-hello-springmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--servlet依赖--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--springmvc依赖--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 编码和编译和JDK版本 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>​    注册springmvc的核心对象DispatcherServlet</p>
-<p>​    需要在tomcat服务器启动后，创建DispatcherServlet对象的实例。</p>
-<p>​    为什么要创建DispatcherServlet对象的实例呢？</p>
-<p>​    因为DispatcherServlet在他的创建过程中， 会同时创建springmvc容器对象，读取springmvc的配置文件，把这个配置文件中的对象都创建好， 当用户发起请求时就可以直接使用对象了。</p>
-<p>​    servlet的初始化会执行init（）方法。 DispatcherServlet在init（）中{</p>
-<p>​      //创建容器，读取配置文件</p>
-<p>​      WebApplicationContext ctx = new ClassPathXmlApplicationContext(“springmvc.xml”);</p>
-<p>​      //把容器对象放入到ServletContext中</p>
-<p>​      getServletContext().setAttribute(key, ctx);</p>
-<p>​    }**</p>
-<p><strong>读取配置文件</strong></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springmvc<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">&lt;!--自定义springmvc读取的配置文件的位置--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">           <span class="comment">&lt;!--springmvc的配置文件的位置的属性--&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">           <span class="comment">&lt;!--指定自定义文件的位置--&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:Springmvc.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">&lt;!--在tomcat启动后，创建Servlet对象</span></span><br><span class="line"><span class="comment">           load-on-startup:表示tomcat启动后创建对象的顺序。它的值是整数，数值越小，</span></span><br><span class="line"><span class="comment">                           tomcat创建对象的时间越早。 大于等于0的整数。</span></span><br><span class="line"><span class="comment">       --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springmvc<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">           使用框架的时候， url-pattern可以使用两种值</span></span><br><span class="line"><span class="comment">           1. 使用扩展名方式， 语法 *.xxxx , xxxx是自定义的扩展名。 常用的方式 *.do, *.action, *.mvc等等</span></span><br><span class="line"><span class="comment">              不能使用 *.jsp</span></span><br><span class="line"><span class="comment">              http://localhost:8080/myweb/some.do</span></span><br><span class="line"><span class="comment">              http://localhost:8080/myweb/other.do</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">           2.使用斜杠 &quot;/&quot;</span></span><br><span class="line"><span class="comment">       --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>*.do<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  <span class="doctag">@Controller</span>:创建处理器对象，对象放在springmvc容器中。</span></span><br><span class="line"><span class="comment"> *  位置：在类的上面</span></span><br><span class="line"><span class="comment"> *  和Spring中讲的<span class="doctag">@Service</span> ,<span class="doctag">@Component</span></span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  能处理请求的都是控制器（处理器）： MyController能处理请求，</span></span><br><span class="line"><span class="comment"> *                         叫做后端控制器（back controller）</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  没有注解之前，需要实现各种不同的接口才能做控制器使用</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyController</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 处理用户提交的请求，springmvc是使用方法来处理的</span></span><br><span class="line"><span class="comment">     * 方法是自定义的， 可以有多种返回值， 多种参数，方法名称自定义</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 准备使用doSome方法处理some.do请求。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@RequestMapping</span>: 请求映射，作用是把一个请求地址和一个方法绑定在一起。</span></span><br><span class="line"><span class="comment">     *                  一个请求指定一个方法处理。</span></span><br><span class="line"><span class="comment">     *       属性： 1. value 是一个String，表示请求的uri地址的（some.do）。</span></span><br><span class="line"><span class="comment">     *                value的值必须是唯一的， 不能重复。 在使用时，推荐地址以“/”开头</span></span><br><span class="line"><span class="comment">     *       位置：1.在方法的上面，常用的。</span></span><br><span class="line"><span class="comment">     *            2.在类的上面</span></span><br><span class="line"><span class="comment">     *  说明： 使用RequestMapping修饰的方法叫做处理器方法或者控制器方法。</span></span><br><span class="line"><span class="comment">     *  使用<span class="doctag">@RequestMapping</span>修饰的方法可以处理请求的，类似Servlet中的doGet, doPost</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *  返回值：ModelAndView 表示本次请求的处理结果</span></span><br><span class="line"><span class="comment">     *   Model: 数据，请求处理完成后，要显示给用户的数据</span></span><br><span class="line"><span class="comment">     *   View: 视图， 比如jsp等等。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/some.do&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doSome</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ModelAndView modelAndView = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        modelAndView.addObject(<span class="string">&quot;msg&quot;</span>, <span class="string">&quot;欢迎&quot;</span>);</span><br><span class="line">        modelAndView.addObject(<span class="string">&quot;fun&quot;</span>, <span class="string">&quot;执行dosome&quot;</span>);</span><br><span class="line">        <span class="comment">//指定视图, 指定视图的完整路径</span></span><br><span class="line">        <span class="comment">//框架对视图执行的forward操作， request.getRequestDispather(&quot;/show.jsp).forward(...)</span></span><br><span class="line">        modelAndView.setViewName(<span class="string">&quot;/show.jsp&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> modelAndView;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Springmvc.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--声明组件扫描器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;controller&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>SpringMVC：是基于spring的一个框架， 实际上就是spring的一个模块， 专门是做web开发的。理解是servlet的一个升级</p>
-<p>web开发底层是servlet ， 框架是在servlet基础上面加入一些功能，让你做web开发方便。</p>
-<p>SpringMVC就是一个Spring。 Spring是容器，ioc能够管理对象，使用&lt;bean&gt;, @Component, @Repository, @Service, @Controller<br>SpringMVC能够创建对象， 放入到容器中（SpringMVC容器）， springmvc容器中放的是控制器对象，</p>
-<p>我们要做的是 使用@Contorller创建控制器对象， 把对象放入到springmvc容器中， 把创建的对象作为控制器使用这个控制器对象能接收用户的请求， 显示处理结果，就当做是一个servlet使用。</p>
-<p>使用@Controller注解创建的是一个普通类的对象， 不是Servlet。 springmvc赋予了控制器对象一些额外的功能。</p>
-<p>web开发底层是servlet， springmvc中有一个对象是Servlet ： DispatherServlet(中央调度器)<br>DispatherServlet: 负责接收用户的所有请求， 用户把请求给了DispatherServlet， 之后DispatherServlet把请求转发给<br>                                我们的Controller对象， 最后是Controller对象处理请求。</p>
-<h2 id="springmvc请求的处理流程"><a href="#springmvc请求的处理流程" class="headerlink" title="springmvc请求的处理流程"></a>springmvc请求的处理流程</h2><p> 1）发起some.do<br> 2）tomcat(web.xml–url-pattern知道 *.do的请求给DispatcherServlet)<br> 3）DispatcherServlet（根据springmvc.xml配置知道 some.do—doSome()）<br> 4）DispatcherServlet把some.do转发个MyController.doSome()方法<br> 5）框架执行doSome（）把得到ModelAndView进行处理， 转发到show.jsp</p>
-<p>上面的过程简化的方式<br>  some.do—DispatcherServlet—MyController</p>
-<p><img src="/2021/05/14/SpringMVC/BaiduNetdiskDownload\SpringMVC\springmvc.png" alt="springmvc"></p>
-<h2 id="springmvc执行过程源代码分析"><a href="#springmvc执行过程源代码分析" class="headerlink" title="springmvc执行过程源代码分析"></a>springmvc执行过程源代码分析</h2><ol>
-<li>tomcat启动，创建容器的过程<br>通过load-on-start标签指定的1，创建DisaptcherServlet对象，<br>DisaptcherServlet它的父类是继承HttpServlet的， 它是一个serlvet， 在被创建时，会执行init（）方法。<br>在init（）方法中<br>//创建容器，读取配置文件<br> WebApplicationContext ctx = new ClassPathXmlApplicationContext(“springmvc.xml”);<br> //把容器对象放入到ServletContext中<br> getServletContext().setAttribute(key, ctx);</li>
-</ol>
-<p>  上面创建容器作用： 创建@controller注解所在的类的对象， 创建MyController对象，<br>   这个对象放入到 springmvc的容器中， 容器是map ， 类似 map.put(“myController”,MyController对象)</p>
-<p>2.请求的处理过程<br>  1）执行servlet的service()<br>       protected void service(HttpServletRequest request, HttpServletResponse response)</p>
-<p>   protected void doService(HttpServletRequest request, HttpServletResponse response)</p>
-<p>  DispatcherServlet.doDispatch(request, response){</p>
-<p>​      调用MyController的.doSome()方法<br>  }</p>
-<p>   doDispatch：springmvc中DispatcherServlet的核心方法， 所有的请求都在这个方法中完成的。</p>
-<p>没有加入注解驱动标签时的状态<br>org.springframework.http.converter.ByteArrayHttpMessageConverter<br>org.springframework.http.converter.StringHttpMessageConverter<br>org.springframework.http.converter.xml.SourceHttpMessageConverter<br>org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter</p>
-<p>加入注解驱动标签时的状态<br>org.springframework.http.converter.ByteArrayHttpMessageConverter<br>org.springframework.http.converter.StringHttpMessageConverter<br>org.springframework.http.converter.ResourceHttpMessageConverter<br>org.springframework.http.converter.ResourceRegionHttpMessageConverter<br>org.springframework.http.converter.xml.SourceHttpMessageConverter<br>org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter<br>org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter<br>org.springframework.http.converter.json.MappingJackson2HttpMessageConverter</p>
-<h2 id="视图解析器"><a href="#视图解析器" class="headerlink" title="视图解析器"></a>视图解析器</h2><p>Springmvc.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--声明springmvc框架中的视图解析器--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;prefix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;/WEB-INF/view/&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;suffix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;.jsp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//当配置了视图解析器后，可以使用逻辑名称（文件名），指定视图</span></span><br><span class="line">      <span class="comment">//框架会使用视图解析器的前缀 + 逻辑名称 + 后缀 组成完成路径， 这里就是字符连接操作</span></span><br><span class="line">      <span class="comment">///WEB-INF/view/ + show + .jsp</span></span><br><span class="line">      mv.setViewName(<span class="string">&quot;show&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<h1 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="RequestMapping"></a>RequestMapping</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 	  <span class="doctag">@RequestMapping</span>:</span></span><br><span class="line"><span class="comment"> *    value ： 所有请求地址的公共部分，叫做模块名称</span></span><br><span class="line"><span class="comment"> *    位置： 放在类的上面</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/user&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@RequestMapping</span> : 请求映射</span></span><br><span class="line"><span class="comment">     *             属性： method， 表示请求的方式。 它的值RequestMethod类枚举值。</span></span><br><span class="line"><span class="comment">     *                    例如表示get请求方式， RequestMethod.GET</span></span><br><span class="line"><span class="comment">     *                    post方式， RequestMethod.POST</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *  你不用get方式，错误是：</span></span><br><span class="line"><span class="comment">     *  HTTP Status 405 - Request method &#x27;GET&#x27; not supported</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">//指定some.do使用get请求方式</span></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/some.do&quot;,method = RequestMethod.GET)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doSome</span><span class="params">()</span></span>&#123;  <span class="comment">// doGet()--service请求处理</span></span><br><span class="line">        <span class="comment">//处理some.do请求了。 相当于service调用处理完成了。</span></span><br><span class="line">        ModelAndView mv  = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        mv.addObject(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;欢迎使用springmvc做web开发&quot;</span>);</span><br><span class="line">        mv.addObject(<span class="string">&quot;fun&quot;</span>,<span class="string">&quot;执行的是doSome方法&quot;</span>);</span><br><span class="line">        mv.setViewName(<span class="string">&quot;show&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> mv;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//指定other.do是post请求方式</span></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/other.do&quot;,method = RequestMethod.POST)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doOther</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ModelAndView mv  = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        mv.addObject(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;====欢迎使用springmvc做web开发====&quot;</span>);</span><br><span class="line">        mv.addObject(<span class="string">&quot;fun&quot;</span>,<span class="string">&quot;执行的是doOther方法&quot;</span>);</span><br><span class="line">        mv.setViewName(<span class="string">&quot;other&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> mv;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//不指定请求方式，没有限制</span></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/first.do&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doFirst</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="params"><span class="function">                                HttpServletResponse response,</span></span></span><br><span class="line"><span class="params"><span class="function">                                HttpSession session)</span></span>&#123;</span><br><span class="line">        ModelAndView mv  = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        mv.addObject(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;====欢迎使用springmvc做web开发====&quot;</span> + 					request.getParameter(<span class="string">&quot;name&quot;</span>));</span><br><span class="line">        mv.addObject(<span class="string">&quot;fun&quot;</span>,<span class="string">&quot;执行的是doFirst方法&quot;</span>);</span><br><span class="line">        mv.setViewName(<span class="string">&quot;other&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> mv;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>处理器方法可以 包含以下四 类参数，这些参数会在系统调用时由系统自动赋值，即程序<br>员可在方法内直接使用。<br>➢ HttpServletRequest<br>➢ HttpServletResponse<br>➢ HttpSession<br>➢ 请求中所携带的请求参数</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/14/SpringMVC/" rel="prev" title="SpringMVC">
+      <i class="fa fa-chevron-left"></i> SpringMVC
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/05/16/MySql%E9%9D%A2%E7%BB%8F/" rel="next" title="MySql面经">
+      MySql面经 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
 
 
 
@@ -1228,6 +493,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">一、概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81helloworld"><span class="nav-number">2.</span> <span class="nav-text">二、helloworld</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81insert%E6%93%8D%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">二、insert操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="nav-number">4.</span> <span class="nav-text">三、工具类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">四、动态代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E4%BC%A0%E5%8F%82"><span class="nav-number">6.</span> <span class="nav-text">五、传参</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E5%B0%81%E8%A3%85%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="nav-number">7.</span> <span class="nav-text">六、封装输出结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E5%A4%84%E7%90%86%E7%89%B9%E6%AE%8A%E5%80%BC"><span class="nav-number">8.</span> <span class="nav-text">七、处理特殊值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2"><span class="nav-number">9.</span> <span class="nav-text">八、模糊查询</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B9%9D%E3%80%81%E5%8A%A8%E6%80%81sql"><span class="nav-number">10.</span> <span class="nav-text">九、动态sql</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E3%80%81%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">11.</span> <span class="nav-text">十、配置文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E4%B8%80%E3%80%81%E5%88%86%E9%A1%B5"><span class="nav-number">12.</span> <span class="nav-text">十一、分页</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
