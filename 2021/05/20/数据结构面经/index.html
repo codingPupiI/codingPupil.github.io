@@ -20,23 +20,22 @@
     var CONFIG = {"hostname":"www.codingpupii.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="1.（京东，shopee）红黑树 和 平衡二叉树 AVL的区别？二者的效率？答： 2.（京东）ArrayList和LinkedList有什么区别答： 1.ArrayList是实现了基于动态数组的数据结构，内部实现是基于内部数组Object[]，LinkedList基于链表的数据结构。 （LinkedList是双向链表，有next也有previous）2.对于随机访问get和set，ArrayLis">
+  <meta name="description" content="1.（京东，shopee）红黑树 和 平衡二叉树 AVL的区别？二者的效率？答： 2.（京东，美团）ArrayList和LinkedList有什么区别答： 1.ArrayList是实现了基于动态数组的数据结构，内部实现是基于内部数组Object[]，LinkedList基于链表的数据结构。 （LinkedList是双向链表，有next也有previous）2.对于随机访问get和set，Array">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构面经">
 <meta property="og:url" content="https://www.codingpupii.com/2021/05/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%9D%A2%E7%BB%8F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.（京东，shopee）红黑树 和 平衡二叉树 AVL的区别？二者的效率？答： 2.（京东）ArrayList和LinkedList有什么区别答： 1.ArrayList是实现了基于动态数组的数据结构，内部实现是基于内部数组Object[]，LinkedList基于链表的数据结构。 （LinkedList是双向链表，有next也有previous）2.对于随机访问get和set，ArrayLis">
+<meta property="og:description" content="1.（京东，shopee）红黑树 和 平衡二叉树 AVL的区别？二者的效率？答： 2.（京东，美团）ArrayList和LinkedList有什么区别答： 1.ArrayList是实现了基于动态数组的数据结构，内部实现是基于内部数组Object[]，LinkedList基于链表的数据结构。 （LinkedList是双向链表，有next也有previous）2.对于随机访问get和set，Array">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Darrichan1/CDN/post/1.png">
 <meta property="og:image" content="file:///C:/Users/zzz/AppData/Local/Packages/SAMSUNGELECTRONICSCoLtd.SamsungNotes_wyx1vj98g3asy/LocalState/SPenSDK30/SPEN_0058974624_1/media/0@paste_210510_000144_378.jpg">
 <meta property="og:image" content="https://www.codingpupii.com/2021/05/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%9D%A2%E7%BB%8F/Users/zzz/AppData/Roaming/Typora/typora-user-images/image-20210514152749779.png">
 <meta property="article:published_time" content="2021-05-19T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-05-20T07:22:48.259Z">
+<meta property="article:modified_time" content="2021-06-14T08:24:55.322Z">
 <meta property="article:author" content="pupil">
 <meta property="article:tag" content="面经">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Darrichan1/CDN/post/1.png">
+<meta name="twitter:image" content="file:///C:/Users/zzz/AppData/Local/Packages/SAMSUNGELECTRONICSCoLtd.SamsungNotes_wyx1vj98g3asy/LocalState/SPenSDK30/SPEN_0058974624_1/media/0@paste_210510_000144_378.jpg">
 
 <link rel="canonical" href="https://www.codingpupii.com/2021/05/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%9D%A2%E7%BB%8F/">
 
@@ -178,10 +177,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-05-20 00:00:00 / Modified: 15:22:48" itemprop="dateCreated datePublished" datetime="2021-05-20T00:00:00+08:00">2021-05-20</time>
+              <time title="Created: 2021-05-20 00:00:00" itemprop="dateCreated datePublished" datetime="2021-05-20T00:00:00+08:00">2021-05-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-14 16:24:55" itemprop="dateModified" datetime="2021-06-14T16:24:55+08:00">2021-06-14</time>
+              </span>
 
           
 
@@ -195,16 +200,16 @@
 
       
         <h1 id="1-（京东，shopee）红黑树-和-平衡二叉树-AVL的区别？二者的效率？"><a href="#1-（京东，shopee）红黑树-和-平衡二叉树-AVL的区别？二者的效率？" class="headerlink" title="1.（京东，shopee）红黑树 和 平衡二叉树 AVL的区别？二者的效率？"></a>1.（京东，shopee）红黑树 和 平衡二叉树 AVL的区别？二者的效率？</h1><p>答：</p>
-<h1 id="2-（京东）ArrayList和LinkedList有什么区别"><a href="#2-（京东）ArrayList和LinkedList有什么区别" class="headerlink" title="2.（京东）ArrayList和LinkedList有什么区别"></a>2.（京东）ArrayList和LinkedList有什么区别</h1><p>答：</p>
+<h1 id="2-（京东，美团）ArrayList和LinkedList有什么区别"><a href="#2-（京东，美团）ArrayList和LinkedList有什么区别" class="headerlink" title="2.（京东，美团）ArrayList和LinkedList有什么区别"></a>2.（京东，美团）ArrayList和LinkedList有什么区别</h1><p>答：</p>
 <p>1.ArrayList是实现了基于动态数组的数据结构，内部实现是基于内部数组Object[]，LinkedList基于链表的数据结构。 （LinkedList是双向链表，有next也有previous）<br>2.对于随机访问get和set，ArrayList优于LinkedList，因为LinkedList要移动指针。<br>3.对于新增和删除操作add和remove，LinkedList比较占优势，因为ArrayList要移动数据。<br>4.LinkedList空间消耗大，在LinkedList中有一个私有的内部类，定义如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Darrichan1/CDN/post/1.png" alt="测试图片"></p>
 <p><img src="file:///C:/Users/zzz/AppData/Local/Packages/SAMSUNGELECTRONICSCoLtd.SamsungNotes_wyx1vj98g3asy/LocalState/SPenSDK30/SPEN_0058974624_1/media/0@paste_210510_000144_378.jpg" alt="img"></p>
-<h1 id="3-（京东）HashMap的数据结构是什么样的？为什么新版本会引入-红黑树-？为什么不直接使用-红黑树-？"><a href="#3-（京东）HashMap的数据结构是什么样的？为什么新版本会引入-红黑树-？为什么不直接使用-红黑树-？" class="headerlink" title="3.（京东）HashMap的数据结构是什么样的？为什么新版本会引入 红黑树 ？为什么不直接使用 红黑树 ？"></a>3.（京东）HashMap的数据结构是什么样的？为什么新版本会引入 红黑树 ？为什么不直接使用 红黑树 ？</h1><p>答：</p>
+<h1 id="3-（京东、阿里、瓜子）HashMap的数据结构是什么样的？为什么新版本会引入-红黑树-？为什么不直接使用-红黑树-？时间复杂度是多少"><a href="#3-（京东、阿里、瓜子）HashMap的数据结构是什么样的？为什么新版本会引入-红黑树-？为什么不直接使用-红黑树-？时间复杂度是多少" class="headerlink" title="3.（京东、阿里、瓜子）HashMap的数据结构是什么样的？为什么新版本会引入 红黑树 ？为什么不直接使用 红黑树 ？时间复杂度是多少"></a>3.（京东、阿里、瓜子）HashMap的数据结构是什么样的？为什么新版本会引入 红黑树 ？为什么不直接使用 红黑树 ？时间复杂度是多少</h1><p>答：</p>
 <p>1.HashMap在Java1.7里使用的是数组+链表的数据结构，在Java1.8里使用的是数组+链表+红黑树（当链表长度大于阈值（或者红黑树的边界值，默认为8）并且当前数组的长度大于64时，此时此索引位置上的所有数据改为使用红黑树存储）。<br>2.当链表长度大于阈值（或者红黑树的边界值，默认为8）并且当前数组的长度大于64时，红黑树效率更高<br>3.</p>
 <h1 id="4-（京东、腾讯）HashMap是线程安全的吗？ConcurrentHashMap的数据结构有什么区别？"><a href="#4-（京东、腾讯）HashMap是线程安全的吗？ConcurrentHashMap的数据结构有什么区别？" class="headerlink" title="4.（京东、腾讯）HashMap是线程安全的吗？ConcurrentHashMap的数据结构有什么区别？"></a>4.（京东、腾讯）HashMap是线程安全的吗？ConcurrentHashMap的数据结构有什么区别？</h1><p>答：</p>
 <p>（1）Hashmap 为什么线程不安全（hash 碰撞和扩容导致），HashMap 扩容的的时候可能会形成环形链表，造成死循环。要想实现线程安全，那么需要调用collections 类的静态方法synchronizeMap（）实现</p>
 <p><img src="/2021/05/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%9D%A2%E7%BB%8F/Users\zzz\AppData\Roaming\Typora\typora-user-images\image-20210514152749779.png" alt="image-20210514152749779"></p>
-
+<h1 id="5-（美团）Arraylist-的扩容的过程？"><a href="#5-（美团）Arraylist-的扩容的过程？" class="headerlink" title="5.（美团）Arraylist 的扩容的过程？"></a>5.（美团）Arraylist 的扩容的过程？</h1><p><a target="_blank" rel="noopener" href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/collection/ArrayList%E6%BA%90%E7%A0%81+%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90.md#3-arraylist-%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90">https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/collection/ArrayList%E6%BA%90%E7%A0%81+%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90.md#3-arraylist-%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90</a></p>
+<h1 id="6-ArrayList-的线程安全性？"><a href="#6-ArrayList-的线程安全性？" class="headerlink" title="6.ArrayList 的线程安全性？"></a>6.ArrayList 的线程安全性？</h1>
     </div>
 
     
@@ -223,12 +228,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/05/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="prev" title="设计模式">
-      <i class="fa fa-chevron-left"></i> 设计模式
+    <a href="/2021/05/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/" rel="prev" title="计算机网络面经">
+      <i class="fa fa-chevron-left"></i> 计算机网络面经
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/05/21/%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" rel="next" title="leetcode 常用方法">
-      leetcode 常用方法 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/05/20/JVM%E9%9D%A2%E7%BB%8F/" rel="next" title="JVM面经">
+      JVM面经 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -288,7 +293,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%EF%BC%88%E4%BA%AC%E4%B8%9C%EF%BC%8Cshopee%EF%BC%89%E7%BA%A2%E9%BB%91%E6%A0%91-%E5%92%8C-%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91-AVL%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F%E4%BA%8C%E8%80%85%E7%9A%84%E6%95%88%E7%8E%87%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">1.（京东，shopee）红黑树 和 平衡二叉树 AVL的区别？二者的效率？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%EF%BC%88%E4%BA%AC%E4%B8%9C%EF%BC%89ArrayList%E5%92%8CLinkedList%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">2.（京东）ArrayList和LinkedList有什么区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%EF%BC%88%E4%BA%AC%E4%B8%9C%EF%BC%89HashMap%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E6%96%B0%E7%89%88%E6%9C%AC%E4%BC%9A%E5%BC%95%E5%85%A5-%E7%BA%A2%E9%BB%91%E6%A0%91-%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8-%E7%BA%A2%E9%BB%91%E6%A0%91-%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">3.（京东）HashMap的数据结构是什么样的？为什么新版本会引入 红黑树 ？为什么不直接使用 红黑树 ？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%EF%BC%88%E4%BA%AC%E4%B8%9C%E3%80%81%E8%85%BE%E8%AE%AF%EF%BC%89HashMap%E6%98%AF%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E5%90%97%EF%BC%9FConcurrentHashMap%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">4.（京东、腾讯）HashMap是线程安全的吗？ConcurrentHashMap的数据结构有什么区别？</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%EF%BC%88%E4%BA%AC%E4%B8%9C%EF%BC%8Cshopee%EF%BC%89%E7%BA%A2%E9%BB%91%E6%A0%91-%E5%92%8C-%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91-AVL%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F%E4%BA%8C%E8%80%85%E7%9A%84%E6%95%88%E7%8E%87%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">1.（京东，shopee）红黑树 和 平衡二叉树 AVL的区别？二者的效率？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%EF%BC%88%E4%BA%AC%E4%B8%9C%EF%BC%8C%E7%BE%8E%E5%9B%A2%EF%BC%89ArrayList%E5%92%8CLinkedList%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">2.（京东，美团）ArrayList和LinkedList有什么区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%EF%BC%88%E4%BA%AC%E4%B8%9C%E3%80%81%E9%98%BF%E9%87%8C%E3%80%81%E7%93%9C%E5%AD%90%EF%BC%89HashMap%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E6%96%B0%E7%89%88%E6%9C%AC%E4%BC%9A%E5%BC%95%E5%85%A5-%E7%BA%A2%E9%BB%91%E6%A0%91-%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8-%E7%BA%A2%E9%BB%91%E6%A0%91-%EF%BC%9F%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%98%AF%E5%A4%9A%E5%B0%91"><span class="nav-number">3.</span> <span class="nav-text">3.（京东、阿里、瓜子）HashMap的数据结构是什么样的？为什么新版本会引入 红黑树 ？为什么不直接使用 红黑树 ？时间复杂度是多少</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%EF%BC%88%E4%BA%AC%E4%B8%9C%E3%80%81%E8%85%BE%E8%AE%AF%EF%BC%89HashMap%E6%98%AF%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E5%90%97%EF%BC%9FConcurrentHashMap%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">4.（京东、腾讯）HashMap是线程安全的吗？ConcurrentHashMap的数据结构有什么区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%EF%BC%88%E7%BE%8E%E5%9B%A2%EF%BC%89Arraylist-%E7%9A%84%E6%89%A9%E5%AE%B9%E7%9A%84%E8%BF%87%E7%A8%8B%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">5.（美团）Arraylist 的扩容的过程？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-ArrayList-%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">6.ArrayList 的线程安全性？</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -304,13 +309,13 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
